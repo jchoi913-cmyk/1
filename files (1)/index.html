@@ -1,0 +1,2584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Breath Café</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&family=Caveat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- SPLASH SCREEN -->
+    <div class="splash-screen" id="splashScreen">
+        <div class="splash-content">
+            <div class="splash-logo-container">
+                <div class="splash-cup">☕</div>
+                <div class="splash-steam">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <h1 class="splash-title">Breath Café</h1>
+            <p class="splash-tagline">Breathe. Brew. Be.</p>
+            <div class="splash-loader">
+                <div class="splash-loader-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ONBOARDING OVERLAY -->
+    <div class="onboarding-overlay" id="onboardingOverlay">
+        <button class="onboarding-skip" onclick="skipOnboarding()">Skip →</button>
+        
+        <!-- Slide 0: Hero Welcome -->
+        <div class="onboarding-slide active" id="slide0">
+            <div class="onboarding-hero">
+                <div class="hero-cup-container">
+                    <div class="hero-cup">☕</div>
+                    <div class="hero-steam">
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+            <h1 class="onboarding-title" style="font-size: 48px;">Breath Café</h1>
+            <p class="onboarding-tagline">Where mindful breathing meets coffee brewing</p>
+            <div class="onboarding-stats-preview">
+                <div class="preview-stat">
+                    <span class="preview-number">2min</span>
+                    <span class="preview-label">per session</span>
+                </div>
+                <div class="preview-divider"></div>
+                <div class="preview-stat">
+                    <span class="preview-number">5</span>
+                    <span class="preview-label">unique brews</span>
+                </div>
+                <div class="preview-divider"></div>
+                <div class="preview-stat">
+                    <span class="preview-number">87%</span>
+                    <span class="preview-label">feel better</span>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="onboarding-dot active" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn primary large" onclick="nextSlide()">Begin Your Journey →</button>
+            </div>
+        </div>
+        
+        <!-- Slide 1: The Problem -->
+        <div class="onboarding-slide" id="slide1">
+            <div class="onboarding-icon">😮‍💨</div>
+            <h1 class="onboarding-title">Feeling Overwhelmed?</h1>
+            <p class="onboarding-desc">Stress, anxiety, and difficult emotions are part of life. But you don't have to face them alone.</p>
+            <div class="onboarding-illustration">
+                <div class="emotion-bubbles">
+                    <span class="bubble b1">😰</span>
+                    <span class="bubble b2">😤</span>
+                    <span class="bubble b3">😢</span>
+                    <span class="bubble b4">😴</span>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="onboarding-dot" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot active" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn secondary" onclick="prevSlide()">← Back</button>
+                <button class="onboarding-btn primary" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+        
+        <!-- Slide 2: The Solution -->
+        <div class="onboarding-slide" id="slide2">
+            <div class="onboarding-icon">🫁</div>
+            <h1 class="onboarding-title">Breathe Like Brewing Coffee</h1>
+            <p class="onboarding-desc">We've transformed breathing exercises into a cozy coffee ritual. Each "brew" is a guided breathing pattern designed for your specific emotion.</p>
+            <div class="brew-demo">
+                <div class="brew-step">
+                    <div class="brew-step-icon">🫘</div>
+                    <div class="brew-step-text">Inhale</div>
+                    <div class="brew-step-time">5s</div>
+                </div>
+                <div class="brew-arrow">→</div>
+                <div class="brew-step">
+                    <div class="brew-step-icon">♨️</div>
+                    <div class="brew-step-text">Hold</div>
+                    <div class="brew-step-time">4s</div>
+                </div>
+                <div class="brew-arrow">→</div>
+                <div class="brew-step">
+                    <div class="brew-step-icon">☕</div>
+                    <div class="brew-step-text">Exhale</div>
+                    <div class="brew-step-time">7s</div>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="onboarding-dot" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot active" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn secondary" onclick="prevSlide()">← Back</button>
+                <button class="onboarding-btn primary" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Coffee Types -->
+        <div class="onboarding-slide" id="slide3">
+            <div class="onboarding-icon">🎯</div>
+            <h1 class="onboarding-title">5 Brews for Every Mood</h1>
+            <p class="onboarding-desc">Each coffee has a unique breathing rhythm scientifically designed for specific emotions.</p>
+            <div class="coffee-menu-preview">
+                <div class="coffee-menu-item">
+                    <span class="coffee-menu-icon">🫖</span>
+                    <div class="coffee-menu-info">
+                        <strong>Mocha</strong>
+                        <span>Sadness → Comfort</span>
+                    </div>
+                </div>
+                <div class="coffee-menu-item">
+                    <span class="coffee-menu-icon">☕</span>
+                    <div class="coffee-menu-info">
+                        <strong>Americano</strong>
+                        <span>Anxiety → Balance</span>
+                    </div>
+                </div>
+                <div class="coffee-menu-item">
+                    <span class="coffee-menu-icon">🧊</span>
+                    <div class="coffee-menu-info">
+                        <strong>Cold Brew</strong>
+                        <span>Anger → Calm</span>
+                    </div>
+                </div>
+                <div class="coffee-menu-item">
+                    <span class="coffee-menu-icon">🥛</span>
+                    <div class="coffee-menu-info">
+                        <strong>Latte</strong>
+                        <span>Stress → Peace</span>
+                    </div>
+                </div>
+                <div class="coffee-menu-item">
+                    <span class="coffee-menu-icon">🍯</span>
+                    <div class="coffee-menu-info">
+                        <strong>Caramel</strong>
+                        <span>Joy → Bliss</span>
+                    </div>
+                </div>
+            </div>
+            <div class="onboarding-dots">
+                <div class="onboarding-dot" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot active" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn secondary" onclick="prevSlide()">← Back</button>
+                <button class="onboarding-btn primary" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+        
+        <!-- Slide 4: Goal Selection (NEW) -->
+        <div class="onboarding-slide" id="slide4">
+            <div class="onboarding-icon">🎯</div>
+            <h1 class="onboarding-title">What brings you here?</h1>
+            <p class="onboarding-desc">Select your primary goal (you can change this later)</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin: 24px 0; max-width: 320px;">
+                <button onclick="selectGoal(this, 'focus')" class="goal-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">🧠</span>
+                    <div>
+                        <div style="font-weight: 600; color: #3e2723;">Focus & Clarity</div>
+                        <div style="font-size: 13px; color: #8d6e63;">Improve concentration</div>
+                    </div>
+                </button>
+                <button onclick="selectGoal(this, 'relax')" class="goal-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">😌</span>
+                    <div>
+                        <div style="font-weight: 600; color: #3e2723;">Relax & De-stress</div>
+                        <div style="font-size: 13px; color: #8d6e63;">Calm anxiety & tension</div>
+                    </div>
+                </button>
+                <button onclick="selectGoal(this, 'sleep')" class="goal-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">🌙</span>
+                    <div>
+                        <div style="font-weight: 600; color: #3e2723;">Better Sleep</div>
+                        <div style="font-size: 13px; color: #8d6e63;">Wind down at night</div>
+                    </div>
+                </button>
+            </div>
+            
+            <div class="onboarding-dots">
+                <div class="onboarding-dot" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot active" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn secondary" onclick="prevSlide()">← Back</button>
+                <button class="onboarding-btn primary" onclick="nextSlide()">Next →</button>
+            </div>
+        </div>
+        
+        <!-- Slide 5: Breathing Style (NEW) -->
+        <div class="onboarding-slide" id="slide5">
+            <div class="onboarding-icon">🫁</div>
+            <h1 class="onboarding-title">Your Breathing Style</h1>
+            <p class="onboarding-desc">How much time do you have for each session?</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 12px; margin: 24px 0; max-width: 320px;">
+                <button onclick="selectStyle(this, 'quick')" class="style-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">⚡</span>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; color: #3e2723;">Quick</div>
+                        <div style="font-size: 13px; color: #8d6e63;">~1 minute sessions</div>
+                    </div>
+                    <div style="font-size: 12px; color: #a1887f; background: #f5f0e8; padding: 4px 10px; border-radius: 12px;">4-2-4</div>
+                </button>
+                <button onclick="selectStyle(this, 'balanced')" class="style-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">☯️</span>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; color: #3e2723;">Balanced</div>
+                        <div style="font-size: 13px; color: #8d6e63;">~2 minute sessions</div>
+                    </div>
+                    <div style="font-size: 12px; color: #a1887f; background: #f5f0e8; padding: 4px 10px; border-radius: 12px;">5-4-6</div>
+                </button>
+                <button onclick="selectStyle(this, 'deep')" class="style-option" style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; background: #fff; border: 2px solid #e8dcc7; border-radius: 16px; cursor: pointer; text-align: left; transition: all 0.2s;">
+                    <span style="font-size: 28px;">🧘</span>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 600; color: #3e2723;">Deep</div>
+                        <div style="font-size: 13px; color: #8d6e63;">~3 minute sessions</div>
+                    </div>
+                    <div style="font-size: 12px; color: #a1887f; background: #f5f0e8; padding: 4px 10px; border-radius: 12px;">6-5-8</div>
+                </button>
+            </div>
+            
+            <div style="text-align: center; font-size: 13px; color: #8d6e63; margin-bottom: 16px;">
+                You can adjust this anytime in Settings
+            </div>
+            
+            <div class="onboarding-dots">
+                <div class="onboarding-dot" onclick="goToSlide(0)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(1)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(2)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(3)"></div>
+                <div class="onboarding-dot" onclick="goToSlide(4)"></div>
+                <div class="onboarding-dot active" onclick="goToSlide(5)"></div>
+            </div>
+            <div class="onboarding-buttons">
+                <button class="onboarding-btn secondary" onclick="prevSlide()">← Back</button>
+                <button class="onboarding-btn primary large" onclick="finishOnboarding()">Start Brewing ☕</button>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-left">
+            <button class="hamburger" id="hamburgerBtn" onclick="toggleSidebar()">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="#" class="logo" onclick="goTo('welcome')">
+                <span class="logo-icon">☕</span>
+                <span class="logo-text">Breath Café</span>
+            </a>
+        </div>
+        <div class="header-center">
+            <nav class="header-nav">
+                <button class="header-nav-item active" onclick="goTo('welcome')">🏠 Home</button>
+                <button class="header-nav-item" onclick="goTo('emotion')">☕ Brew</button>
+                <button class="header-nav-item" onclick="goTo('journal')">📖 Journal</button>
+                <button class="header-nav-item" onclick="goTo('stats')">🔬 Observe</button>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="streak-badge"><span>🔥</span><span>7 Day Streak</span></div>
+            <div class="user-avatar">👤</div>
+        </div>
+    </header>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+    <!-- SIDEBAR -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <span style="font-size: 28px;">☕</span>
+            <span class="sidebar-logo">Breath Café</span>
+            <button class="sidebar-close" onclick="toggleSidebar()">✕</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Main Menu</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link active" onclick="goTo('welcome'); toggleSidebar();"><span class="sidebar-menu-icon">🏠</span><span>Home</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('emotion'); toggleSidebar();"><span class="sidebar-menu-icon">☕</span><span>Start Brewing</span><span class="sidebar-menu-badge">NEW</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('calendar'); toggleSidebar();"><span class="sidebar-menu-icon">📅</span><span>Calendar</span></a></li>
+                    <li class="sidebar-menu-item gamified-only"><a class="sidebar-menu-link" onclick="goTo('rewards'); toggleSidebar();"><span class="sidebar-menu-icon">🎁</span><span>Rewards & Coupons</span></a></li>
+                    <li class="sidebar-menu-item gamified-only"><a class="sidebar-menu-link" onclick="goTo('stamps'); toggleSidebar();"><span class="sidebar-menu-icon">🏆</span><span>Stamp Collection</span></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Records</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('journal'); toggleSidebar();"><span class="sidebar-menu-icon">📖</span><span>Journal</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('stats'); toggleSidebar();"><span class="sidebar-menu-icon">🔬</span><span>Self-Observation</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('weekly'); toggleSidebar();"><span class="sidebar-menu-icon">📊</span><span>Weekly Report</span></a></li>
+                </ul>
+            </div>
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">Settings</div>
+                <ul class="sidebar-menu">
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('settings'); toggleSidebar();"><span class="sidebar-menu-icon">⚙️</span><span>Settings</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('notifications'); toggleSidebar();"><span class="sidebar-menu-icon">🔔</span><span>Notifications</span></a></li>
+                    <li class="sidebar-menu-item"><a class="sidebar-menu-link" onclick="goTo('help'); toggleSidebar();"><span class="sidebar-menu-icon">❓</span><span>Help</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="sidebar-user" onclick="goTo('account'); toggleSidebar();" style="cursor: pointer;">
+                <div class="sidebar-user-avatar">👤</div>
+                <div>
+                    <div class="sidebar-user-name">Guest</div>
+                    <div class="sidebar-user-level">Manage your Account</div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="app">
+        <!-- PAGE 1: WELCOME -->
+        <div id="welcome" class="page active">
+            
+            <!-- Hero Section - Warm Coffee Style -->
+            <div style="background: linear-gradient(180deg, #2d1b13 0%, #3e2723 40%, #5d4037 100%); margin: -40px -40px 0 -40px; padding: 50px 40px 70px; position: relative; overflow: hidden;">
+                
+                <!-- Coffee Bean Pattern Background -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.05;">
+                    <div style="position: absolute; top: 15%; left: 8%; font-size: 40px; transform: rotate(-15deg);">☕</div>
+                    <div style="position: absolute; top: 35%; right: 12%; font-size: 30px; transform: rotate(20deg);">☕</div>
+                    <div style="position: absolute; bottom: 25%; left: 15%; font-size: 25px; transform: rotate(-10deg);">☕</div>
+                    <div style="position: absolute; top: 60%; right: 20%; font-size: 35px; transform: rotate(15deg);">☕</div>
+                </div>
+                
+                <!-- Main Title -->
+                <div style="text-align: center; position: relative; z-index: 1;">
+                    
+                    <!-- Logo -->
+                    <div style="margin-bottom: 24px;">
+                        <span style="font-size: 56px;">☕</span>
+                    </div>
+                    
+                    <h1 style="font-family: 'Caveat', cursive; font-size: 52px; color: #fff; font-weight: 700; margin-bottom: 4px; letter-spacing: 1px;">
+                        Breath Café
+                    </h1>
+                    
+                    <div style="font-family: 'Playfair Display', serif; font-size: 14px; color: #d7ccc8; letter-spacing: 3px; margin-bottom: 20px;">
+                        SLOW DOWN · BREATHE · OBSERVE
+                    </div>
+                    
+                    <div style="width: 80px; height: 1px; background: linear-gradient(90deg, transparent, #8d6e63, transparent); margin: 0 auto 20px;"></div>
+                    
+                    <p style="font-family: 'Playfair Display', serif; color: #bcaaa4; font-size: 16px; line-height: 1.8; max-width: 300px; margin: 0 auto; font-style: italic;">
+                        "Every breath is a chance to<br>reclaim your own rhythm"
+                    </p>
+                </div>
+                
+                <!-- Animated Coffee Cup -->
+                <div style="text-align: center; margin-top: 32px;">
+                    <div style="display: inline-block; position: relative;">
+                        <!-- Steam Lines -->
+                        <div style="position: absolute; top: -20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px;">
+                            <div style="width: 2px; height: 20px; background: linear-gradient(to top, rgba(255,255,255,0.3), transparent); border-radius: 2px; animation: steam 2s ease-in-out infinite;"></div>
+                            <div style="width: 2px; height: 25px; background: linear-gradient(to top, rgba(255,255,255,0.3), transparent); border-radius: 2px; animation: steam 2s ease-in-out infinite 0.3s;"></div>
+                            <div style="width: 2px; height: 18px; background: linear-gradient(to top, rgba(255,255,255,0.3), transparent); border-radius: 2px; animation: steam 2s ease-in-out infinite 0.6s;"></div>
+                        </div>
+                        <!-- Cup Circle -->
+                        <div style="width: 100px; height: 100px; border: 3px solid rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: breathe 4s ease-in-out infinite;">
+                            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <span style="font-size: 28px;">🫁</span>
+                            </div>
+                        </div>
+                        <div style="margin-top: 12px; font-family: 'Caveat', cursive; font-size: 16px; color: #a1887f;">
+                            breathe with me
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Question Card - Coffee Paper Style -->
+            <div style="background: #fffbf5; margin: -30px 0 20px 0; border-radius: 20px; padding: 24px; box-shadow: 0 4px 20px rgba(45, 27, 19, 0.15); position: relative; border: 1px solid #e8dcc7;">
+                <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #5d4037; color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 600; font-family: 'Inter', sans-serif;">
+                    ☕ TODAY'S QUESTION
+                </div>
+                <div style="text-align: center; padding-top: 8px;">
+                    <p style="font-family: 'Playfair Display', serif; font-size: 18px; color: #3e2723; line-height: 1.7; font-style: italic;">
+                        "Does the interface control me,<br>
+                        or can I define the speed<br>
+                        of my own experience?"
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Stats Cards - Warm Style -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px;">
+                <div style="background: linear-gradient(135deg, #efebe9, #d7ccc8); border-radius: 16px; padding: 20px; text-align: center;">
+                    <div style="font-family: 'Caveat', cursive; font-size: 14px; color: #5d4037; margin-bottom: 6px;">Brews Made</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 600; color: #3e2723;">24</div>
+                    <div style="font-size: 11px; color: #8d6e63;">this month</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #efebe9, #d7ccc8); border-radius: 16px; padding: 20px; text-align: center;">
+                    <div style="font-family: 'Caveat', cursive; font-size: 14px; color: #5d4037; margin-bottom: 6px;">Time Paused</div>
+                    <div style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 600; color: #3e2723;">48<span style="font-size: 18px;">m</span></div>
+                    <div style="font-size: 11px; color: #8d6e63;">of mindfulness</div>
+                </div>
+            </div>
+            
+            <!-- Today's Note - Handwritten Style -->
+            <div style="background: #fffdf8; border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid #e8dcc7; position: relative;">
+                <div style="position: absolute; top: -1px; left: 20px; right: 20px; height: 3px; background: repeating-linear-gradient(90deg, #d7ccc8, #d7ccc8 10px, transparent 10px, transparent 12px);"></div>
+                <div style="display: flex; align-items: flex-start; gap: 14px;">
+                    <div style="font-size: 28px;">📝</div>
+                    <div>
+                        <div style="font-family: 'Caveat', cursive; font-size: 18px; color: #5d4037; margin-bottom: 6px;">A gentle reminder...</div>
+                        <p style="font-family: 'Caveat', cursive; font-size: 17px; line-height: 1.6; color: #6d4c41;">
+                            You last paused <strong>3 hours ago</strong>.<br>
+                            Your mind has been racing since then.<br>
+                            <span style="color: #8d6e63;">Maybe it's time for a slow brew?</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Experience Mode Card -->
+            <div style="background: #fff; border-radius: 16px; padding: 16px; margin-bottom: 20px; border: 1px solid #e8dcc7; display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div id="homeModeIcon" style="width: 44px; height: 44px; background: linear-gradient(135deg, #ffcc80, #ffab40); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🎮</div>
+                    <div>
+                        <div style="font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600; color: #3e2723;" id="homeModeText">Gamified Mode</div>
+                        <div style="font-size: 12px; color: #8d6e63;">Rewards & streaks on</div>
+                    </div>
+                </div>
+                <button onclick="goTo('settings')" style="padding: 8px 16px; background: #efebe9; border: none; border-radius: 20px; font-size: 12px; cursor: pointer; color: #5d4037; font-weight: 500;">
+                    Switch
+                </button>
+            </div>
+            
+            <!-- Gamified Stats (only in Gamified Mode) -->
+            <div class="gamified-only" style="background: linear-gradient(135deg, #fff8e1, #ffecb3); border-radius: 16px; padding: 18px; margin-bottom: 20px; border: 1px solid #ffe082;">
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <div style="font-size: 32px;">🔥</div>
+                        <div>
+                            <div style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600; color: #e65100;">7 Day Streak</div>
+                            <div style="font-size: 12px; color: #8d6e63;">Don't break it!</div>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 20px; letter-spacing: 2px;">☕☕☕☕</div>
+                        <div style="font-size: 10px; color: #8d6e63; margin-top: 2px;">4 stamps</div>
+                    </div>
+                </div>
+                <div style="margin-top: 14px; padding-top: 12px; border-top: 1px dashed #ffe082; font-family: 'Caveat', cursive; font-size: 15px; color: #6d4c41; text-align: center;">
+                    🔬 Does this motivate you, or create pressure?
+                </div>
+            </div>
+            
+            <!-- Main CTA Button -->
+            <div style="margin-bottom: 20px;">
+                <button onclick="goTo('emotion')" style="width: 100%; padding: 18px 24px; background: linear-gradient(135deg, #5d4037, #3e2723); color: #fff; border: none; border-radius: 16px; font-family: 'Playfair Display', serif; font-size: 18px; cursor: pointer; position: relative; box-shadow: 0 4px 15px rgba(45, 27, 19, 0.3);">
+                    Start Brewing ☕
+                </button>
+                <div style="text-align: center; margin-top: 8px; font-family: 'Caveat', cursive; font-size: 15px; color: #8d6e63;">~2 minutes of intentional pause</div>
+            </div>
+            
+            <!-- Quick Access Grid -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 24px;">
+                <button onclick="goTo('calendar')" style="padding: 16px 8px; background: #fff; border: 1px solid #e8dcc7; border-radius: 14px; cursor: pointer; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">📅</div>
+                    <div style="font-family: 'Caveat', cursive; font-size: 15px; color: #5d4037;">Calendar</div>
+                </button>
+                <button onclick="goTo('journal')" style="padding: 16px 8px; background: #fff; border: 1px solid #e8dcc7; border-radius: 14px; cursor: pointer; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">📖</div>
+                    <div style="font-family: 'Caveat', cursive; font-size: 15px; color: #5d4037;">Journal</div>
+                </button>
+                <button onclick="goTo('stats')" style="padding: 16px 8px; background: #fff; border: 1px solid #e8dcc7; border-radius: 14px; cursor: pointer; text-align: center;">
+                    <div style="font-size: 24px; margin-bottom: 6px;">🔬</div>
+                    <div style="font-family: 'Caveat', cursive; font-size: 15px; color: #5d4037;">Observe</div>
+                </button>
+            </div>
+            
+            <!-- About Section - Coffee Menu Style -->
+            <div style="background: #3e2723; border-radius: 16px; padding: 24px; text-align: center;">
+                <div style="font-family: 'Caveat', cursive; font-size: 20px; color: #d7ccc8; margin-bottom: 12px;">What is Breath Café?</div>
+                <p style="font-family: 'Playfair Display', serif; font-size: 14px; color: #a1887f; line-height: 1.8; margin-bottom: 16px;">
+                    A <span style="color: #efebe9;">design research platform</span> exploring how digital interfaces shape our sense of time.
+                    <br><br>
+                    Part wellness app, part experiment.
+                </p>
+                <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+                    <span style="padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-family: 'Caveat', cursive; font-size: 14px; color: #bcaaa4;">#SlowDesign</span>
+                    <span style="padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-family: 'Caveat', cursive; font-size: 14px; color: #bcaaa4;">#MFAThesis</span>
+                    <span style="padding: 6px 12px; background: rgba(255,255,255,0.1); border-radius: 20px; font-family: 'Caveat', cursive; font-size: 14px; color: #bcaaa4;">#BreathWork</span>
+                </div>
+            </div>
+            
+            <!-- Philosophy Section - Design Sovereignty -->
+            <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 20px; padding: 32px; margin-top: 20px; position: relative; overflow: hidden;">
+                <!-- Decorative elements -->
+                <div style="position: absolute; top: 20px; right: 20px; font-size: 60px; opacity: 0.05;">🫁</div>
+                
+                <div style="position: relative; z-index: 1;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <div style="width: 8px; height: 8px; background: #74b9ff; border-radius: 50%;"></div>
+                        <span style="font-size: 11px; color: #74b9ff; font-weight: 600; letter-spacing: 2px;">DESIGN PHILOSOPHY</span>
+                    </div>
+                    
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 28px; color: #fff; font-weight: 400; margin-bottom: 16px; line-height: 1.4;">
+                        Design Sovereignty
+                    </h3>
+                    
+                    <p style="font-size: 15px; color: #a0aec0; line-height: 1.8; margin-bottom: 24px;">
+                        The idea that we can reclaim awareness and choice within systems designed to optimize us.
+                    </p>
+                    
+                    <div style="background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; margin-bottom: 24px;">
+                        <div style="font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; font-style: italic; text-align: center; line-height: 1.6;">
+                            "Most apps optimize your time.<br>
+                            <span style="color: #74b9ff;">This one lets you reclaim it.</span>"
+                        </div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: #74b9ff; font-size: 18px;">→</span>
+                            <span style="color: #cbd5e0; font-size: 14px; line-height: 1.6;">What if frictionless isn't always good?</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: #74b9ff; font-size: 18px;">→</span>
+                            <span style="color: #cbd5e0; font-size: 14px; line-height: 1.6;">What if slowness is a form of resistance?</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: #74b9ff; font-size: 18px;">→</span>
+                            <span style="color: #cbd5e0; font-size: 14px; line-height: 1.6;">What if breathing could be a protest?</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Designer Credit Section -->
+            <div style="background: #fffdf8; border-radius: 16px; padding: 24px; margin-top: 20px; border: 1px solid #e8dcc7;">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--coffee-medium), var(--coffee-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 28px;">👩‍🎨</span>
+                    </div>
+                    <div style="flex: 1;">
+                        <div style="font-family: 'Caveat', cursive; font-size: 22px; color: var(--coffee-dark); margin-bottom: 4px;">Designed by Chloe Choi</div>
+                        <div style="font-size: 13px; color: var(--text-light); line-height: 1.5;">
+                            MFA Design & Technology<br>
+                            Pratt Institute, 2024
+                        </div>
+                    </div>
+                </div>
+                <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid #e8dcc7;">
+                    <p style="font-family: 'Caveat', cursive; font-size: 16px; color: var(--coffee-medium); line-height: 1.6; text-align: center;">
+                        "I still don't have all the answers. But I've learned that hesitation isn't weakness—it's the first step toward noticing. And noticing is where sovereignty begins."
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <div style="text-align: center; padding: 32px 0 16px; margin-top: 20px;">
+                <div style="font-size: 24px; margin-bottom: 8px;">☕</div>
+                <div style="font-family: 'Caveat', cursive; font-size: 18px; color: var(--coffee-medium); margin-bottom: 8px;">Breath Café</div>
+                <div style="font-size: 12px; color: var(--text-light); line-height: 1.6;">
+                    A thesis project exploring design sovereignty<br>
+                    and mindful resistance in digital spaces.
+                </div>
+                <div style="font-size: 11px; color: #bcaaa4; margin-top: 16px;">
+                    © 2024 Chloe Choi · Pratt Institute MFA Thesis
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- PAGE 2: EMOTION -->
+        <div id="emotion" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">How are you feeling?</h2>
+                <p class="page-subtitle">Let your emotions guide your brew</p>
+            </div>
+            <div class="emotion-grid">
+                <div class="emotion-card" onclick="selectEmotion('joy', '😊', 'Joy')">
+                    <span class="emotion-icon">😊</span>
+                    <div class="emotion-name">Joy</div>
+                    <div class="emotion-desc">Happy & energetic</div>
+                </div>
+                <div class="emotion-card" onclick="selectEmotion('calm', '😌', 'Calm')">
+                    <span class="emotion-icon">😌</span>
+                    <div class="emotion-name">Calm</div>
+                    <div class="emotion-desc">Peaceful & content</div>
+                </div>
+                <div class="emotion-card" onclick="selectEmotion('angry', '😤', 'Angry')">
+                    <span class="emotion-icon">😤</span>
+                    <div class="emotion-name">Angry</div>
+                    <div class="emotion-desc">Frustrated & tense</div>
+                </div>
+                <div class="emotion-card" onclick="selectEmotion('sad', '😢', 'Sad')">
+                    <span class="emotion-icon">😢</span>
+                    <div class="emotion-name">Sad</div>
+                    <div class="emotion-desc">Feeling down</div>
+                </div>
+                <div class="emotion-card" onclick="selectEmotion('anxious', '😰', 'Anxious')">
+                    <span class="emotion-icon">😰</span>
+                    <div class="emotion-name">Anxious</div>
+                    <div class="emotion-desc">Worried & uneasy</div>
+                </div>
+                <div class="emotion-card" onclick="selectEmotion('tired', '😴', 'Tired')">
+                    <span class="emotion-icon">😴</span>
+                    <div class="emotion-name">Tired</div>
+                    <div class="emotion-desc">Exhausted</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 3: RECOMMENDATION -->
+        <div id="recommendation" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            
+            <!-- Experiment Framing -->
+            <div class="experiment-frame" id="experimentFrame">
+                <div class="experiment-badge">🔬 EXPERIMENT</div>
+                <div class="experiment-title">Reconstructing Speed</div>
+                <div class="experiment-desc">
+                    You are about to experience an intentional pause.<br>
+                    For the next <strong id="expDuration">2 min 16 sec</strong>, the interface will guide your rhythm.
+                </div>
+                <div class="experiment-observe">
+                    <div class="observe-title">👁️ Observe:</div>
+                    <ul class="observe-list">
+                        <li>Does time feel different when you control the pace?</li>
+                        <li>Are you following the interface, or is it following you?</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="page-subtitle" style="margin-bottom: 12px;">
+                    You're feeling <span id="currEmotion" style="font-weight: 600;"></span> <span id="currIcon"></span>
+                </p>
+                <h2 class="page-title">We recommend...</h2>
+            </div>
+            <div class="recommendation-card">
+                <div class="coffee-icon-large" id="recIcon">🫖</div>
+                <h3 class="coffee-name" id="recName">Mocha</h3>
+                <p class="coffee-tagline" id="recTag">"Warm & Comforting"</p>
+                <div class="breath-pattern">
+                    <div class="breath-bar">
+                        <div class="breath-visual" style="height: 50px;"></div>
+                        <div class="breath-label">Inhale ↑</div>
+                        <div class="breath-time" id="inhaleT">5s</div>
+                    </div>
+                    <div class="breath-bar">
+                        <div class="breath-visual" style="height: 40px; background: linear-gradient(to top, #ffb74d, #ffd54f);"></div>
+                        <div class="breath-label">Hold —</div>
+                        <div class="breath-time" id="holdT">4s</div>
+                    </div>
+                    <div class="breath-bar">
+                        <div class="breath-visual" style="height: 60px;"></div>
+                        <div class="breath-label">Exhale ↓</div>
+                        <div class="breath-time" id="exhaleT">7s</div>
+                    </div>
+                </div>
+                <div class="why-box">
+                    <div class="why-title">☕ Why this breathing?</div>
+                    <div class="step"><span class="step-name" id="s1n">Grinding (5s)</span><br><span id="s1d">Prepare slowly, breathe in deeply</span></div>
+                    <div class="step"><span class="step-name" id="s2n">Heating (4s)</span><br><span id="s2d">Let warmth settle</span></div>
+                    <div class="step"><span class="step-name" id="s3n">Brewing (7s)</span><br><span id="s3d">Release slowly like comfort</span></div>
+                </div>
+                <button class="btn btn-primary" style="margin-top: 16px;" onclick="startBrew()">Begin Experiment ☕</button>
+            </div>
+            <div class="alternatives">
+                <div class="alternatives-title">Or choose by intention:</div>
+                
+                <!-- 3 Categories Only - ZEN Concept -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    
+                    <!-- Breathe Category -->
+                    <div style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 16px; padding: 16px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 20px;">🧠</span>
+                            <span style="font-weight: 600; color: #2e7d32;">Focus</span>
+                            <span style="font-size: 11px; color: #66bb6a; margin-left: auto;">Quick energy</span>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="alt-card" onclick="changeRec('americano')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">☕</div>
+                                <div style="font-size: 12px; font-weight: 500;">Americano</div>
+                                <div style="font-size: 10px; color: #888;">4-2-4</div>
+                            </div>
+                            <div class="alt-card" onclick="changeRec('espresso')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">⚡</div>
+                                <div style="font-size: 12px; font-weight: 500;">Espresso</div>
+                                <div style="font-size: 10px; color: #888;">3-2-3</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Calm Category -->
+                    <div style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 16px; padding: 16px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 20px;">😌</span>
+                            <span style="font-weight: 600; color: #1565c0;">Calm</span>
+                            <span style="font-size: 11px; color: #42a5f5; margin-left: auto;">Reduce stress</span>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="alt-card" onclick="changeRec('latte')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">🥛</div>
+                                <div style="font-size: 12px; font-weight: 500;">Latte</div>
+                                <div style="font-size: 10px; color: #888;">5-3-6</div>
+                            </div>
+                            <div class="alt-card" onclick="changeRec('mocha')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">🫖</div>
+                                <div style="font-size: 12px; font-weight: 500;">Mocha</div>
+                                <div style="font-size: 10px; color: #888;">5-4-7</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sleep Category -->
+                    <div style="background: linear-gradient(135deg, #ede7f6, #d1c4e9); border-radius: 16px; padding: 16px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+                            <span style="font-size: 20px;">🌙</span>
+                            <span style="font-weight: 600; color: #5e35b1;">Sleep</span>
+                            <span style="font-size: 11px; color: #7e57c2; margin-left: auto;">Deep relaxation</span>
+                        </div>
+                        <div style="display: flex; gap: 8px;">
+                            <div class="alt-card" onclick="changeRec('coldbrew')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">🧊</div>
+                                <div style="font-size: 12px; font-weight: 500;">Cold Brew</div>
+                                <div style="font-size: 10px; color: #888;">6-3-6</div>
+                            </div>
+                            <div class="alt-card" onclick="changeRec('decaf')" style="flex: 1; background: #fff; border-radius: 12px; padding: 12px; text-align: center; cursor: pointer;">
+                                <div style="font-size: 24px;">🍵</div>
+                                <div style="font-size: 12px; font-weight: 500;">Decaf</div>
+                                <div style="font-size: 10px; color: #888;">6-5-8</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div style="text-align: center; margin-top: 16px; font-size: 12px; color: #8d6e63;">
+                    🔬 Fewer choices = clearer mind
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 4: BREWING -->
+        <div id="brewing" class="page">
+            <div class="brewing-header">
+                <button class="back-btn" onclick="confirmStop()">←</button>
+                <div class="timer" id="brewTimer">00:00</div>
+                <div style="width: 32px;"></div>
+            </div>
+            
+            <!-- Remaining Time Badge -->
+            <div style="text-align: center; margin-bottom: 12px;">
+                <div style="display: inline-block; background: rgba(93, 64, 55, 0.1); padding: 6px 16px; border-radius: 20px;">
+                    <span style="font-size: 12px; color: #8d6e63;">Remaining: </span>
+                    <span style="font-size: 14px; font-weight: 600; color: #5d4037;" id="remainingTime">2:16</span>
+                </div>
+            </div>
+            
+            <!-- Cycle Counter -->
+            <div style="text-align: center; margin-bottom: 16px;">
+                <div style="font-size: 48px; font-weight: 700; color: var(--coffee-medium);" id="cycleCount">1</div>
+                <div style="font-size: 14px; color: var(--text-light); font-weight: 600;">/ 3 Cycles</div>
+                <div style="display: flex; justify-content: center; gap: 8px; margin-top: 8px;">
+                    <div class="cycle-dot" id="dot1"></div>
+                    <div class="cycle-dot" id="dot2"></div>
+                    <div class="cycle-dot" id="dot3"></div>
+                </div>
+            </div>
+            
+            <!-- Pattern Preview Mini -->
+            <div style="display: flex; justify-content: center; gap: 6px; margin-bottom: 20px;">
+                <div id="patternIn" style="padding: 6px 12px; background: #e8dcc7; border-radius: 12px; font-size: 11px; color: #5d4037; transition: all 0.3s;">
+                    ↑ 5s
+                </div>
+                <div id="patternHold" style="padding: 6px 12px; background: #f5f0e8; border-radius: 12px; font-size: 11px; color: #8d6e63; transition: all 0.3s;">
+                    — 4s
+                </div>
+                <div id="patternOut" style="padding: 6px 12px; background: #f5f0e8; border-radius: 12px; font-size: 11px; color: #8d6e63; transition: all 0.3s;">
+                    ↓ 7s
+                </div>
+            </div>
+            
+            <div class="coffee-maker">
+                <div class="filter"></div>
+                <div class="drops">
+                    <div class="drop"></div>
+                    <div class="drop"></div>
+                    <div class="drop"></div>
+                </div>
+                <div class="server">
+                    <div class="coffee-level" id="coffeeLevel"></div>
+                </div>
+                <div class="steam">
+                    <div class="steam-line"></div>
+                    <div class="steam-line"></div>
+                    <div class="steam-line"></div>
+                </div>
+            </div>
+            
+            <!-- Progress Ring -->
+            <div style="position: relative; width: 180px; height: 180px; margin: 0 auto 24px;">
+                <svg width="180" height="180" style="transform: rotate(-90deg);">
+                    <circle cx="90" cy="90" r="80" fill="none" stroke="var(--cream)" stroke-width="12"></circle>
+                    <circle id="progressCircle" cx="90" cy="90" r="80" fill="none" stroke="var(--coffee-medium)" stroke-width="12" 
+                            stroke-dasharray="502.4" stroke-dashoffset="502.4" stroke-linecap="round"
+                            style="transition: stroke-dashoffset 1s ease;"></circle>
+                </svg>
+                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                    <div style="font-size: 32px;" id="phaseEmoji">🫘</div>
+                    <div style="font-size: 13px; color: var(--text-light); margin-top: 4px;" id="phaseProgress">0%</div>
+                </div>
+            </div>
+            
+            <div class="phase-box">
+                <div class="phase-title" id="phaseTitle">GRINDING BEANS</div>
+                <div class="phase-action" id="phaseAction">Inhale ↑</div>
+                <div class="phase-desc" id="phaseDesc">"Prepare slowly, breathe in deeply"</div>
+                <div class="phase-timer" id="phaseTime">5s left</div>
+            </div>
+            <button class="hold-btn" id="holdBtn" onmousedown="hold()" onmouseup="unhold()" ontouchstart="hold()" ontouchend="unhold()">
+                <span id="btnText">Hold to Brew</span>
+                <div class="hold-progress" id="holdProgress"></div>
+            </button>
+        </div>
+
+        <!-- PAGE 5: REFLECTION -->
+        <div id="reflection" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">Your <span id="refCoffee">Mocha</span> is ready!</h2>
+                <p class="page-subtitle">Take a moment to reflect</p>
+            </div>
+            <div style="text-align: center; margin: 32px 0;">
+                <div style="font-size: 80px;">☕</div>
+            </div>
+            <div class="emotion-compare">
+                <div class="emotion-flow">
+                    <div class="emotion-state">
+                        <div class="emotion-label">Before</div>
+                        <div class="emotion-display" id="beforeIcon">😢</div>
+                        <div class="emotion-text" id="beforeText">Sad</div>
+                    </div>
+                    <div class="emotion-arrow">→</div>
+                    <div class="emotion-state">
+                        <div class="emotion-label">Now</div>
+                        <div class="emotion-display">?</div>
+                        <div class="emotion-text">How do you feel?</div>
+                    </div>
+                </div>
+                <div class="emotion-selector">
+                    <div class="emotion-option" onclick="selectAfter('joy', '😊', 'Joy')">
+                        <div class="emotion-option-icon">😊</div>
+                        <div class="emotion-option-name">Joy</div>
+                    </div>
+                    <div class="emotion-option" onclick="selectAfter('calm', '😌', 'Calm')">
+                        <div class="emotion-option-icon">😌</div>
+                        <div class="emotion-option-name">Calm</div>
+                    </div>
+                    <div class="emotion-option" onclick="selectAfter('angry', '😤', 'Angry')">
+                        <div class="emotion-option-icon">😤</div>
+                        <div class="emotion-option-name">Angry</div>
+                    </div>
+                    <div class="emotion-option" onclick="selectAfter('sad', '😢', 'Sad')">
+                        <div class="emotion-option-icon">😢</div>
+                        <div class="emotion-option-name">Sad</div>
+                    </div>
+                    <div class="emotion-option" onclick="selectAfter('anxious', '😰', 'Anxious')">
+                        <div class="emotion-option-icon">😰</div>
+                        <div class="emotion-option-name">Anxious</div>
+                    </div>
+                    <div class="emotion-option" onclick="selectAfter('tired', '😴', 'Tired')">
+                        <div class="emotion-option-icon">😴</div>
+                        <div class="emotion-option-name">Tired</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Critical Reflection Questions -->
+            <div class="research-reflection">
+                <div class="research-reflection-header">
+                    <span>🔬</span> Research Reflection
+                </div>
+                
+                <div class="research-question">
+                    <div class="research-q-text">Did this 2 minutes feel different from a normal 2 minutes?</div>
+                    <div class="research-q-options">
+                        <label class="research-option" onclick="selectResearchAnswer('time', 'longer')">
+                            <input type="radio" name="timePerception" value="longer">
+                            <span>Much longer</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('time', 'same')">
+                            <input type="radio" name="timePerception" value="same">
+                            <span>About the same</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('time', 'shorter')">
+                            <input type="radio" name="timePerception" value="shorter">
+                            <span>Shorter</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="research-question">
+                    <div class="research-q-text">Who controlled the pace of this experience?</div>
+                    <div class="research-q-options">
+                        <label class="research-option" onclick="selectResearchAnswer('control', 'interface')">
+                            <input type="radio" name="paceControl" value="interface">
+                            <span>The interface</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('control', 'me')">
+                            <input type="radio" name="paceControl" value="me">
+                            <span>I did</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('control', 'together')">
+                            <input type="radio" name="paceControl" value="together">
+                            <span>We did together</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="research-question gamified-only" id="gamifiedQuestion">
+                    <div class="research-q-text">Will the streak/stamp influence your next session?</div>
+                    <div class="research-q-options">
+                        <label class="research-option" onclick="selectResearchAnswer('gamification', 'yes')">
+                            <input type="radio" name="gamificationInfluence" value="yes">
+                            <span>Yes, it motivates me</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('gamification', 'no')">
+                            <input type="radio" name="gamificationInfluence" value="no">
+                            <span>No, not really</span>
+                        </label>
+                        <label class="research-option" onclick="selectResearchAnswer('gamification', 'pressure')">
+                            <input type="radio" name="gamificationInfluence" value="pressure">
+                            <span>It feels like pressure</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="note-section">
+                <div class="note-label">✍️ Today's Sip Note</div>
+                <textarea class="note-textarea" id="sipNote" placeholder="How was your experience? (100 characters)" maxlength="100" oninput="updateCount()"></textarea>
+                <div class="char-count" id="charCount">0/100</div>
+            </div>
+            <div class="rating">
+                <div class="rating-label">Rate your brewing:</div>
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                </div>
+            </div>
+            <button class="btn btn-primary" onclick="saveRef()">Save & Continue</button>
+        </div>
+
+        <!-- PAGE 6: STAMPS -->
+        <div id="stamps" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">☕ Your Mindful Collection</h2>
+                <p class="page-subtitle">Every breath is a step toward inner peace</p>
+            </div>
+            
+            <!-- Motivational Quote Card -->
+            <div class="card" style="background: linear-gradient(135deg, #f5f0e8, #e8dcc7); border: none; text-align: center; margin: 24px 0;">
+                <div style="font-size: 32px; margin-bottom: 12px;">🧘</div>
+                <div style="font-family: 'Caveat', cursive; font-size: 20px; color: var(--coffee-dark); line-height: 1.5;" id="mindfulQuote">
+                    "Breathing in, I calm my body. Breathing out, I smile."
+                </div>
+                <div style="font-size: 12px; color: var(--text-light); margin-top: 8px;">— Thich Nhat Hanh</div>
+            </div>
+
+            <div class="stamps-collection">
+                <!-- Progress Section -->
+                <div class="progress-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <div class="progress-text" id="stampProg">10/10 stamps</div>
+                        <div style="font-size: 13px; color: var(--text-light);" id="stampReward">🎁 Reward unlocked!</div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="stampBar" style="width: 100%;"></div>
+                    </div>
+                </div>
+
+                <!-- Stamp Grid with Mindful Messages -->
+                <div class="stamp-grid" id="stampGrid"></div>
+                
+                <!-- Coffee Collection - NEW -->
+                <div class="card" style="margin-top: 24px; background: linear-gradient(135deg, #3e2723, #5d4037); color: white;">
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                        <span style="font-size: 24px;">☕</span>
+                        <div>
+                            <div style="font-weight: 600; font-size: 16px;">Your Coffee Collection</div>
+                            <div style="font-size: 12px; color: #d7ccc8;">Brews you've mastered</div>
+                        </div>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
+                        <!-- Mocha - Unlocked -->
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px solid #a1887f;">
+                                <span style="font-size: 24px;">🫖</span>
+                            </div>
+                            <div style="font-size: 11px; color: #d7ccc8;">Mocha</div>
+                            <div style="font-size: 10px; color: #a1887f;">5x</div>
+                        </div>
+                        
+                        <!-- Americano - Unlocked -->
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px solid #a1887f;">
+                                <span style="font-size: 24px;">☕</span>
+                            </div>
+                            <div style="font-size: 11px; color: #d7ccc8;">Americano</div>
+                            <div style="font-size: 10px; color: #a1887f;">3x</div>
+                        </div>
+                        
+                        <!-- Latte - Unlocked -->
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px solid #a1887f;">
+                                <span style="font-size: 24px;">🥛</span>
+                            </div>
+                            <div style="font-size: 11px; color: #d7ccc8;">Latte</div>
+                            <div style="font-size: 10px; color: #a1887f;">4x</div>
+                        </div>
+                        
+                        <!-- Cold Brew - Unlocked -->
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px solid #a1887f;">
+                                <span style="font-size: 24px;">🧊</span>
+                            </div>
+                            <div style="font-size: 11px; color: #d7ccc8;">Cold Brew</div>
+                            <div style="font-size: 10px; color: #a1887f;">1x</div>
+                        </div>
+                        
+                        <!-- Caramel - Unlocked -->
+                        <div style="text-align: center;">
+                            <div style="width: 48px; height: 48px; background: rgba(255,255,255,0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px solid #a1887f;">
+                                <span style="font-size: 24px;">🍯</span>
+                            </div>
+                            <div style="font-size: 11px; color: #d7ccc8;">Caramel</div>
+                            <div style="font-size: 10px; color: #a1887f;">1x</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                        <div style="font-family: 'Caveat', cursive; font-size: 15px; color: #bcaaa4;">
+                            🎉 All 5 brews collected! You're a true barista.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Streak Card -->
+                <div class="card gamified-only" style="margin-top: 16px; display: flex; align-items: center; gap: 16px;">
+                    <div style="font-size: 48px;">🔥</div>
+                    <div style="flex: 1;">
+                        <div style="font-weight: 700; font-size: 18px;" id="stampStreak">7 Day Streak!</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Consistency builds lasting habits</div>
+                    </div>
+                </div>
+
+                <!-- Mindfulness Benefits Card -->
+                <div class="card" style="margin-top: 16px;">
+                    <div style="font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                        🌟 Your Mindfulness Journey
+                    </div>
+                    <div class="mindful-stats">
+                        <div class="mindful-stat-item">
+                            <div class="mindful-stat-icon">🫁</div>
+                            <div class="mindful-stat-info">
+                                <div class="mindful-stat-value" id="totalBreaths">384</div>
+                                <div class="mindful-stat-label">Mindful Breaths</div>
+                            </div>
+                        </div>
+                        <div class="mindful-stat-item">
+                            <div class="mindful-stat-icon">⏱️</div>
+                            <div class="mindful-stat-info">
+                                <div class="mindful-stat-value" id="totalMinutes">48</div>
+                                <div class="mindful-stat-label">Minutes of Calm</div>
+                            </div>
+                        </div>
+                        <div class="mindful-stat-item">
+                            <div class="mindful-stat-icon">😌</div>
+                            <div class="mindful-stat-info">
+                                <div class="mindful-stat-value" id="moodImprovePercent">87%</div>
+                                <div class="mindful-stat-label">Mood Improved</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements Section -->
+                <div class="card gamified-only" style="margin-top: 16px;">
+                    <div style="font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                        🏆 Achievements
+                    </div>
+                    <div class="achievements-grid">
+                        <div class="achievement-item unlocked" id="achFirst">
+                            <div class="achievement-icon">☕</div>
+                            <div class="achievement-name">First Brew</div>
+                        </div>
+                        <div class="achievement-item unlocked" id="achWeek">
+                            <div class="achievement-icon">🔥</div>
+                            <div class="achievement-name">7 Day Streak</div>
+                        </div>
+                        <div class="achievement-item" id="achMaster">
+                            <div class="achievement-icon">🫖</div>
+                            <div class="achievement-name">Mocha Master</div>
+                        </div>
+                        <div class="achievement-item" id="achZen">
+                            <div class="achievement-icon">🧘</div>
+                            <div class="achievement-name">Zen Mode</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- History Section -->
+                <button class="history-toggle" onclick="toggleHist()" style="margin-top: 24px;">
+                    <span>▼ View Brewing History</span>
+                    <span id="histCount">(4 entries)</span>
+                </button>
+                <div class="history-list" id="histList"></div>
+                
+                <!-- Call to Action -->
+                <div style="text-align: center; margin-top: 32px;">
+                    <p style="font-family: 'Caveat', cursive; font-size: 18px; color: var(--text-light); margin-bottom: 16px;">
+                        Ready for your next moment of peace?
+                    </p>
+                    <button class="btn btn-primary" onclick="goTo('emotion')">
+                        Start Mindful Brewing ☕
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 7: JOURNAL -->
+        <div id="journal" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">📖 My Coffee Journal</h2>
+                <p class="page-subtitle">Your brewing journey</p>
+            </div>
+            <div class="journal-header">
+                <button class="journal-tab active" onclick="switchTab('timeline')">Timeline</button>
+                <button class="journal-tab" onclick="switchTab('calendar')">Calendar</button>
+            </div>
+            <div id="timelineView" class="timeline">
+                <!-- Add New Entry -->
+                <div class="card" style="margin-bottom: 24px;">
+                    <div style="font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                        ✍️ Add Today's Entry
+                    </div>
+                    <div style="font-size: 14px; color: var(--text-light); margin-bottom: 12px;">How are you feeling today?</div>
+                    <textarea id="journalEntry" placeholder="Write about your day, feelings, or thoughts... (300 characters)" 
+                              maxlength="300" 
+                              style="width: 100%; min-height: 100px; padding: 12px; border: 2px solid var(--border); border-radius: 12px; font-family: 'Inter', sans-serif; font-size: 14px; line-height: 1.5; resize: vertical; margin-bottom: 8px;"></textarea>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div style="font-size: 12px; color: var(--text-light);" id="journalCharCount">0/300</div>
+                        <button class="btn btn-primary" style="width: auto; padding: 10px 24px; font-size: 14px;" onclick="saveJournalEntry()">Save Entry</button>
+                    </div>
+                </div>
+                
+                <div class="week-section">
+                    <div class="week-title">▼ This Week</div>
+                    <div id="thisWeekList"></div>
+                </div>
+                <div class="week-section">
+                    <div class="week-title">▼ Last Week</div>
+                    <div id="lastWeekList"></div>
+                </div>
+                <div class="insight-box">
+                    <div class="insight-title">💡 Insights</div>
+                    <div class="insight-text">Mocha helped 80% of the time when you felt sad. Your best brewing time is morning (7-9am).</div>
+                </div>
+            </div>
+            <div id="calendarView" style="display: none;">
+                <div class="calendar-header">
+                    <div class="calendar-month" id="calendarMonth">November 2024</div>
+                    <div class="calendar-nav">
+                        <button onclick="changeMonth(-1)">←</button>
+                        <button onclick="changeMonth(1)">→</button>
+                    </div>
+                </div>
+                <div class="weekday-header">
+                    <div class="weekday">S</div>
+                    <div class="weekday">M</div>
+                    <div class="weekday">T</div>
+                    <div class="weekday">W</div>
+                    <div class="weekday">T</div>
+                    <div class="weekday">F</div>
+                    <div class="weekday">S</div>
+                </div>
+                <div class="calendar-grid" id="calGrid"></div>
+            </div>
+        </div>
+
+        <!-- PAGE 8: SELF-OBSERVATION (formerly Stats) -->
+        <div id="stats" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">🔬 Self-Observation</h2>
+                <p class="page-subtitle">What patterns do you notice?</p>
+            </div>
+
+            <!-- Research Context -->
+            <div class="observation-intro">
+                <div class="observation-intro-icon">👁️</div>
+                <div class="observation-intro-text">
+                    This is not a performance dashboard.<br>
+                    It's a mirror for observing your own patterns.
+                </div>
+            </div>
+
+            <!-- Core Observation: Intentional Pauses -->
+            <div class="observation-card primary">
+                <div class="observation-header">
+                    <span class="observation-icon">⏸️</span>
+                    <span class="observation-title">Intentional Pauses</span>
+                </div>
+                <div class="observation-big-number">24</div>
+                <div class="observation-label">moments you chose to stop</div>
+                <div class="observation-insight">
+                    In a world of infinite scroll, you paused 24 times.
+                </div>
+            </div>
+            
+            <!-- NEW: Weekly Minutes Graph - Coffee Drip Style -->
+            <div class="observation-card" style="background: linear-gradient(180deg, #3e2723 0%, #5d4037 100%); color: #fff; overflow: hidden;">
+                <div class="observation-header" style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 12px; margin-bottom: 16px;">
+                    <span class="observation-icon" style="background: rgba(255,255,255,0.1);">☕</span>
+                    <span class="observation-title" style="color: #fff;">Weekly Brew</span>
+                    <span style="margin-left: auto; font-size: 11px; color: #bcaaa4;">This Week</span>
+                </div>
+                
+                <!-- Coffee Dripper Visualization -->
+                <div style="position: relative; padding: 0 10px;">
+                    
+                    <!-- Dripper Top (V60 shape) -->
+                    <div style="position: relative; margin: 0 auto 8px; width: 100%;">
+                        <svg viewBox="0 0 300 40" style="width: 100%; height: 30px;">
+                            <path d="M 0 0 L 300 0 L 270 40 L 30 40 Z" fill="#4e342e" />
+                            <path d="M 10 5 L 290 5 L 265 35 L 35 35 Z" fill="#6d4c41" />
+                        </svg>
+                    </div>
+                    
+                    <!-- Coffee Cups Row (7 days) -->
+                    <div style="display: flex; justify-content: space-between; align-items: flex-end; height: 120px; padding: 0 4px; position: relative;">
+                        
+                        <!-- Drip Lines Background -->
+                        <div style="position: absolute; top: -8px; left: 0; right: 0; display: flex; justify-content: space-between; padding: 0 18px;">
+                            <div style="width: 2px; height: 12px; background: linear-gradient(to bottom, #8d6e63, transparent);"></div>
+                            <div style="width: 2px; height: 18px; background: linear-gradient(to bottom, #8d6e63, transparent);"></div>
+                            <div style="width: 2px; height: 10px; background: linear-gradient(to bottom, #8d6e63, transparent);"></div>
+                            <div style="width: 2px; height: 15px; background: linear-gradient(to bottom, #8d6e63, transparent);"></div>
+                            <div style="width: 2px; height: 20px; background: linear-gradient(to bottom, #a1887f, transparent);"></div>
+                            <div style="width: 2px; height: 8px; background: linear-gradient(to bottom, #d7ccc8, transparent);"></div>
+                            <div style="width: 2px; height: 5px; background: linear-gradient(to bottom, #d7ccc8, transparent); opacity: 0.5;"></div>
+                        </div>
+                        
+                        <!-- Monday Cup -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative;">
+                                <div style="width: 32px; height: 50px; background: #2d1b13; border-radius: 0 0 8px 8px; border: 2px solid #5d4037; border-top: none; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 65%; background: linear-gradient(to top, #8B4513, #A0522D); border-radius: 0 0 6px 6px;"></div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px solid #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">M</div>
+                            <div style="font-size: 9px; color: #8d6e63;">8m</div>
+                        </div>
+                        
+                        <!-- Tuesday Cup -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative;">
+                                <div style="width: 32px; height: 50px; background: #2d1b13; border-radius: 0 0 8px 8px; border: 2px solid #5d4037; border-top: none; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 85%; background: linear-gradient(to top, #8B4513, #A0522D); border-radius: 0 0 6px 6px;"></div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px solid #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">T</div>
+                            <div style="font-size: 9px; color: #8d6e63;">12m</div>
+                        </div>
+                        
+                        <!-- Wednesday Cup -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative;">
+                                <div style="width: 32px; height: 50px; background: #2d1b13; border-radius: 0 0 8px 8px; border: 2px solid #5d4037; border-top: none; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 50%; background: linear-gradient(to top, #8B4513, #A0522D); border-radius: 0 0 6px 6px;"></div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px solid #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">W</div>
+                            <div style="font-size: 9px; color: #8d6e63;">6m</div>
+                        </div>
+                        
+                        <!-- Thursday Cup -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative;">
+                                <div style="width: 32px; height: 50px; background: #2d1b13; border-radius: 0 0 8px 8px; border: 2px solid #5d4037; border-top: none; position: relative; overflow: hidden;">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 75%; background: linear-gradient(to top, #8B4513, #A0522D); border-radius: 0 0 6px 6px;"></div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px solid #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">T</div>
+                            <div style="font-size: 9px; color: #8d6e63;">10m</div>
+                        </div>
+                        
+                        <!-- Friday Cup (Today - Highlighted) -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative;">
+                                <div style="width: 36px; height: 54px; background: #1a0f0a; border-radius: 0 0 10px 10px; border: 3px solid #a1887f; border-top: none; position: relative; overflow: hidden; box-shadow: 0 0 12px rgba(255,200,150,0.3);">
+                                    <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 95%; background: linear-gradient(to top, #6F4E37, #8B4513); border-radius: 0 0 7px 7px;"></div>
+                                    <!-- Steam animation -->
+                                    <div style="position: absolute; top: -8px; left: 50%; transform: translateX(-50%); display: flex; gap: 3px;">
+                                        <div style="width: 2px; height: 8px; background: rgba(255,255,255,0.4); border-radius: 2px; animation: steam 1.5s ease-in-out infinite;"></div>
+                                        <div style="width: 2px; height: 10px; background: rgba(255,255,255,0.3); border-radius: 2px; animation: steam 1.5s ease-in-out infinite 0.2s;"></div>
+                                        <div style="width: 2px; height: 6px; background: rgba(255,255,255,0.4); border-radius: 2px; animation: steam 1.5s ease-in-out infinite 0.4s;"></div>
+                                    </div>
+                                </div>
+                                <div style="position: absolute; top: 14px; right: -9px; width: 11px; height: 22px; border: 3px solid #a1887f; border-left: none; border-radius: 0 10px 10px 0;"></div>
+                            </div>
+                            <div style="font-size: 11px; color: #fff; font-weight: 600;">F</div>
+                            <div style="font-size: 10px; color: #a1887f; font-weight: 500;">14m ☕</div>
+                        </div>
+                        
+                        <!-- Saturday Cup (Empty/Future) -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative; opacity: 0.5;">
+                                <div style="width: 32px; height: 50px; background: transparent; border-radius: 0 0 8px 8px; border: 2px dashed #5d4037; border-top: none; position: relative;">
+                                    <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 16px; opacity: 0.5;">?</div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px dashed #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #6d4c41;">S</div>
+                            <div style="font-size: 9px; color: #5d4037;">-</div>
+                        </div>
+                        
+                        <!-- Sunday Cup (Empty/Future) -->
+                        <div style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
+                            <div style="position: relative; opacity: 0.4;">
+                                <div style="width: 32px; height: 50px; background: transparent; border-radius: 0 0 8px 8px; border: 2px dashed #5d4037; border-top: none; position: relative;">
+                                    <div style="position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 16px; opacity: 0.5;">?</div>
+                                </div>
+                                <div style="position: absolute; top: 12px; right: -8px; width: 10px; height: 20px; border: 2px dashed #5d4037; border-left: none; border-radius: 0 8px 8px 0;"></div>
+                            </div>
+                            <div style="font-size: 10px; color: #5d4037;">S</div>
+                            <div style="font-size: 9px; color: #5d4037;">-</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Summary Stats -->
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div>
+                        <div style="font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 600;">48<span style="font-size: 16px; font-weight: 400;">min</span></div>
+                        <div style="font-size: 12px; color: #bcaaa4;">total brewed</div>
+                    </div>
+                    <div style="text-align: center; padding: 0 16px; border-left: 1px solid rgba(255,255,255,0.1); border-right: 1px solid rgba(255,255,255,0.1);">
+                        <div style="font-size: 24px; font-weight: 600;">5</div>
+                        <div style="font-size: 11px; color: #bcaaa4;">cups filled</div>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="font-size: 18px; color: #a5d6a7; font-weight: 500;">↑ 12%</div>
+                        <div style="font-size: 11px; color: #bcaaa4;">vs last week</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- NEW: Mood Pattern - Coffee Temperature Style -->
+            <div class="observation-card">
+                <div class="observation-header">
+                    <span class="observation-icon">🌡️</span>
+                    <span class="observation-title">Mood Temperature</span>
+                    <span style="margin-left: auto; font-size: 11px; color: #8d6e63;">Your emotional brew</span>
+                </div>
+                <div class="observation-content">
+                    
+                    <!-- Temperature Scale -->
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding: 12px; background: linear-gradient(90deg, #ffccbc, #fff9c4, #c8e6c9); border-radius: 12px;">
+                        <span style="font-size: 18px;">🔥</span>
+                        <div style="flex: 1; text-align: center; font-size: 11px; color: #5d4037;">Hot (Stressed) → Warm (Balanced) → Cool (Calm)</div>
+                        <span style="font-size: 18px;">❄️</span>
+                    </div>
+                    
+                    <!-- Daily Mood as Coffee Cups with Temperature -->
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 16px;">
+                        
+                        <!-- Monday - Hot/Anxious -->
+                        <div style="text-align: center;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #ff8a65, #ffab91); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: 0 2px 8px rgba(255,138,101,0.4);">
+                                <span style="font-size: 18px;">😰</span>
+                            </div>
+                            <div style="font-size: 10px; color: #8d6e63;">Mon</div>
+                            <div style="font-size: 8px; color: #ff8a65;">Hot</div>
+                        </div>
+                        
+                        <!-- Tuesday - Warm/Frustrated -->
+                        <div style="text-align: center;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #ffb74d, #ffcc80); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: 0 2px 8px rgba(255,183,77,0.4);">
+                                <span style="font-size: 18px;">😤</span>
+                            </div>
+                            <div style="font-size: 10px; color: #8d6e63;">Tue</div>
+                            <div style="font-size: 8px; color: #ffb74d;">Warm</div>
+                        </div>
+                        
+                        <!-- Wednesday - Cool/Calm -->
+                        <div style="text-align: center;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #81c784, #a5d6a7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: 0 2px 8px rgba(129,199,132,0.4);">
+                                <span style="font-size: 18px;">😌</span>
+                            </div>
+                            <div style="font-size: 10px; color: #8d6e63;">Wed</div>
+                            <div style="font-size: 8px; color: #81c784;">Cool</div>
+                        </div>
+                        
+                        <!-- Thursday - Cool/Happy -->
+                        <div style="text-align: center;">
+                            <div style="width: 36px; height: 36px; background: linear-gradient(135deg, #4db6ac, #80cbc4); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: 0 2px 8px rgba(77,182,172,0.4);">
+                                <span style="font-size: 18px;">😊</span>
+                            </div>
+                            <div style="font-size: 10px; color: #8d6e63;">Thu</div>
+                            <div style="font-size: 8px; color: #4db6ac;">Chill</div>
+                        </div>
+                        
+                        <!-- Friday - Today (Highlighted) -->
+                        <div style="text-align: center;">
+                            <div style="width: 42px; height: 42px; background: linear-gradient(135deg, #81c784, #a5d6a7); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; box-shadow: 0 0 0 3px #fff, 0 0 0 5px #81c784, 0 4px 12px rgba(129,199,132,0.5);">
+                                <span style="font-size: 20px;">😌</span>
+                            </div>
+                            <div style="font-size: 11px; color: #5d4037; font-weight: 600;">Fri</div>
+                            <div style="font-size: 9px; color: #81c784; font-weight: 500;">Now</div>
+                        </div>
+                        
+                        <!-- Saturday - Future -->
+                        <div style="text-align: center; opacity: 0.4;">
+                            <div style="width: 36px; height: 36px; background: #e8dcc7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px dashed #bcaaa4;">
+                                <span style="font-size: 16px;">?</span>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">Sat</div>
+                        </div>
+                        
+                        <!-- Sunday - Future -->
+                        <div style="text-align: center; opacity: 0.3;">
+                            <div style="width: 36px; height: 36px; background: #e8dcc7; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; border: 2px dashed #bcaaa4;">
+                                <span style="font-size: 16px;">?</span>
+                            </div>
+                            <div style="font-size: 10px; color: #bcaaa4;">Sun</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Insight -->
+                    <div style="background: linear-gradient(135deg, #e8f5e9, #f1f8e9); padding: 14px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 13px; color: #2e7d32; line-height: 1.5;">
+                            ☕ <strong>Your brew is cooling down</strong><br>
+                            <span style="font-size: 12px; color: #558b2f;">Started hot (anxious), now perfectly cool (calm)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Time Perception Data -->
+            <div class="observation-card">
+                <div class="observation-header">
+                    <span class="observation-icon">⏱️</span>
+                    <span class="observation-title">Time Perception</span>
+                </div>
+                <div class="observation-content">
+                    <div class="perception-stats">
+                        <div class="perception-item">
+                            <div class="perception-value">62%</div>
+                            <div class="perception-label">felt time slow down</div>
+                        </div>
+                        <div class="perception-item">
+                            <div class="perception-value">28%</div>
+                            <div class="perception-label">felt normal pace</div>
+                        </div>
+                        <div class="perception-item">
+                            <div class="perception-value">10%</div>
+                            <div class="perception-label">felt time speed up</div>
+                        </div>
+                    </div>
+                    <div class="observation-question">
+                        💭 When does time feel different to you?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Perception -->
+            <div class="observation-card">
+                <div class="observation-header">
+                    <span class="observation-icon">🎮</span>
+                    <span class="observation-title">Pace Control</span>
+                </div>
+                <div class="observation-content">
+                    <div class="control-visual">
+                        <div class="control-bar">
+                            <div class="control-fill interface" style="width: 35%;"></div>
+                            <div class="control-fill together" style="width: 45%;"></div>
+                            <div class="control-fill me" style="width: 20%;"></div>
+                        </div>
+                        <div class="control-legend">
+                            <span><span class="legend-dot interface"></span> Interface led (35%)</span>
+                            <span><span class="legend-dot together"></span> Together (45%)</span>
+                            <span><span class="legend-dot me"></span> I led (20%)</span>
+                        </div>
+                    </div>
+                    <div class="observation-question">
+                        💭 Who should control the pace of a digital experience?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emotion Transitions -->
+            <div class="observation-card">
+                <div class="observation-header">
+                    <span class="observation-icon">🔄</span>
+                    <span class="observation-title">Emotion Transitions</span>
+                </div>
+                <div class="observation-content">
+                    <div class="transition-map">
+                        <div class="transition-item">
+                            <span class="transition-from">😰 Anxious</span>
+                            <span class="transition-arrow">→</span>
+                            <span class="transition-to">😌 Calm</span>
+                            <span class="transition-count">8x</span>
+                        </div>
+                        <div class="transition-item">
+                            <span class="transition-from">😢 Sad</span>
+                            <span class="transition-arrow">→</span>
+                            <span class="transition-to">😌 Calm</span>
+                            <span class="transition-count">5x</span>
+                        </div>
+                        <div class="transition-item">
+                            <span class="transition-from">😤 Angry</span>
+                            <span class="transition-arrow">→</span>
+                            <span class="transition-to">😌 Calm</span>
+                            <span class="transition-count">3x</span>
+                        </div>
+                        <div class="transition-item highlight">
+                            <span class="transition-from">😰 Anxious</span>
+                            <span class="transition-arrow">→</span>
+                            <span class="transition-to">😰 Anxious</span>
+                            <span class="transition-count">2x</span>
+                        </div>
+                    </div>
+                    <div class="observation-insight">
+                        Not every pause changes how you feel. That's data too.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gamification Reflection (only in Gamified mode) -->
+            <div class="observation-card gamified-only" id="gamificationReflection">
+                <div class="observation-header">
+                    <span class="observation-icon">🎰</span>
+                    <span class="observation-title">Gamification Effect</span>
+                </div>
+                <div class="observation-content">
+                    <div class="gamification-data">
+                        <div class="gamification-item">
+                            <div class="gamification-q">Did streaks motivate you?</div>
+                            <div class="gamification-responses">
+                                <div class="response-bar">
+                                    <div class="response-fill yes" style="width: 55%;">Yes 55%</div>
+                                </div>
+                                <div class="response-bar">
+                                    <div class="response-fill pressure" style="width: 30%;">Pressure 30%</div>
+                                </div>
+                                <div class="response-bar">
+                                    <div class="response-fill no" style="width: 15%;">No 15%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="observation-question">
+                        💭 Is motivation from external rewards the same as intrinsic motivation?
+                    </div>
+                    <div class="mode-switch-hint">
+                        Try <strong>Pure Mode</strong> to compare your experience without gamification.
+                    </div>
+                </div>
+            </div>
+
+            <!-- When Do You Pause? -->
+            <div class="observation-card">
+                <div class="observation-header">
+                    <span class="observation-icon">🕐</span>
+                    <span class="observation-title">When Do You Pause?</span>
+                </div>
+                <div class="observation-content">
+                    <div class="time-pattern">
+                        <div class="time-slot">
+                            <div class="time-label">Morning</div>
+                            <div class="time-bar"><div class="time-fill" style="width: 45%;"></div></div>
+                            <div class="time-percent">45%</div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">Afternoon</div>
+                            <div class="time-bar"><div class="time-fill" style="width: 30%;"></div></div>
+                            <div class="time-percent">30%</div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">Evening</div>
+                            <div class="time-bar"><div class="time-fill" style="width: 20%;"></div></div>
+                            <div class="time-percent">20%</div>
+                        </div>
+                        <div class="time-slot">
+                            <div class="time-label">Night</div>
+                            <div class="time-bar"><div class="time-fill" style="width: 5%;"></div></div>
+                            <div class="time-percent">5%</div>
+                        </div>
+                    </div>
+                    <div class="observation-insight">
+                        Your body has a rhythm. Does your technology respect it?
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final Reflection -->
+            <div class="observation-card final">
+                <div class="observation-header">
+                    <span class="observation-icon">🪞</span>
+                    <span class="observation-title">The Real Question</span>
+                </div>
+                <div class="final-question">
+                    "Does the interface control me,<br>or can I define the speed<br>of my own experience?"
+                </div>
+                <div class="final-prompt">
+                    What did you discover?
+                </div>
+                <textarea class="final-input" placeholder="Write your reflection..." maxlength="500"></textarea>
+                <button class="btn btn-secondary" style="margin-top: 16px;" onclick="saveObservation()">Save Reflection</button>
+            </div>
+        </div>
+
+        <!-- PAGE 9: WEEKLY -->
+        <div id="weekly" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <div class="text-center">
+                <h2 class="page-title">📊 This Week's Flavors</h2>
+                <p class="page-subtitle">Dec 4 - Dec 10, 2025</p>
+            </div>
+            <div class="weekly-container">
+                <div class="card text-center">
+                    <div style="font-size: 48px; margin-bottom: 8px;">☕</div>
+                    <div style="font-size: 16px; font-weight: 600; margin-bottom: 16px;">7 brews completed</div>
+                    <div style="display: flex; gap: 8px; justify-content: center; font-size: 13px;">
+                        <div>🫖 3x</div>
+                        <div>☕ 2x</div>
+                        <div>🥛 2x</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="font-weight: 600; margin-bottom: 16px;">Your Emotional Journey:</div>
+                    <div class="journey-line">
+                        <div class="journey-day">
+                            <div class="journey-icon">😢</div>
+                            <div class="journey-label">Mon</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😰</div>
+                            <div class="journey-label">Tue</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😌</div>
+                            <div class="journey-label">Wed</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😊</div>
+                            <div class="journey-label">Thu</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😌</div>
+                            <div class="journey-label">Fri</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😊</div>
+                            <div class="journey-label">Sat</div>
+                        </div>
+                        <div class="journey-day">
+                            <div class="journey-icon">😊</div>
+                            <div class="journey-label">Sun</div>
+                        </div>
+                    </div>
+                    <div class="insight-box" style="margin-top: 16px;">
+                        <div class="insight-text">📈 Positive trend! You've been feeling better as the week progressed.</div>
+                    </div>
+                </div>
+                <div class="reflection-box">
+                    <div style="font-weight: 600; margin-bottom: 16px;">✍️ Week Reflection</div>
+                    <div class="reflection-q">What was the best moment?</div>
+                    <input type="text" class="reflection-input" placeholder="Type here...">
+                    <div class="reflection-q">What helped you most?</div>
+                    <input type="text" class="reflection-input" placeholder="Type here...">
+                    <div class="reflection-q">Goal for next week?</div>
+                    <input type="text" class="reflection-input" placeholder="Type here...">
+                    <button class="btn btn-primary">Save My Week</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 14: CALENDAR -->
+        <div id="calendar" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            
+            <div class="calendar-page-header">
+                <h2 class="page-title">📅 Breathing Calendar</h2>
+            </div>
+            
+            <!-- Month Navigation -->
+            <div class="card" style="margin-bottom: 20px;">
+                <div class="calendar-month-nav">
+                    <button onclick="changeCalendarMonth(-1)">←</button>
+                    <div class="calendar-month-title" id="calendarPageMonth">December 2024</div>
+                    <button onclick="changeCalendarMonth(1)">→</button>
+                </div>
+            </div>
+            
+            <!-- Calendar Grid -->
+            <div class="card">
+                <div class="calendar-weekdays">
+                    <div class="calendar-weekday">Sun</div>
+                    <div class="calendar-weekday">Mon</div>
+                    <div class="calendar-weekday">Tue</div>
+                    <div class="calendar-weekday">Wed</div>
+                    <div class="calendar-weekday">Thu</div>
+                    <div class="calendar-weekday">Fri</div>
+                    <div class="calendar-weekday">Sat</div>
+                </div>
+                <div class="calendar-days" id="calendarPageGrid">
+                    <!-- Generated by JS -->
+                </div>
+            </div>
+            
+            <!-- Monthly Stats -->
+            <div class="calendar-stats-row">
+                <div class="calendar-stat-card">
+                    <div class="calendar-stat-icon">☕</div>
+                    <div class="calendar-stat-value" id="calMonthBrews">12</div>
+                    <div class="calendar-stat-label">Brews this month</div>
+                </div>
+                <div class="calendar-stat-card">
+                    <div class="calendar-stat-icon">🔥</div>
+                    <div class="calendar-stat-value" id="calMonthStreak">7</div>
+                    <div class="calendar-stat-label">Best streak</div>
+                </div>
+                <div class="calendar-stat-card">
+                    <div class="calendar-stat-icon">😌</div>
+                    <div class="calendar-stat-value" id="calMonthMood">85%</div>
+                    <div class="calendar-stat-label">Mood improved</div>
+                </div>
+            </div>
+            
+            <!-- Today's Detail / Selected Day Detail -->
+            <div class="calendar-detail-card" id="calendarDayDetail">
+                <div class="calendar-detail-title">
+                    <span>📋</span> Today's Sessions
+                </div>
+                <div id="calendarDayBrews">
+                    <div class="brew-history-item">
+                        <div class="brew-history-icon">🫖</div>
+                        <div class="brew-history-info">
+                            <div class="brew-history-name">Mocha</div>
+                            <div class="brew-history-emotion">😰 Anxious → 😌 Calm</div>
+                        </div>
+                        <div class="brew-history-time">9:30 AM</div>
+                    </div>
+                    <div class="brew-history-item">
+                        <div class="brew-history-icon">🥛</div>
+                        <div class="brew-history-info">
+                            <div class="brew-history-name">Latte</div>
+                            <div class="brew-history-emotion">😴 Tired → 😊 Joy</div>
+                        </div>
+                        <div class="brew-history-time">3:15 PM</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border);">
+                    <div style="font-size: 13px; color: var(--text-light); margin-bottom: 8px;">Ready for another mindful moment?</div>
+                    <button class="btn btn-primary" onclick="goTo('emotion')">Start Brewing ☕</button>
+                </div>
+            </div>
+            
+            <!-- Emotion Pattern This Month -->
+            <div class="calendar-detail-card">
+                <div class="calendar-detail-title">
+                    <span>📊</span> Emotion Patterns This Month
+                </div>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                    <div style="flex: 1; min-width: 140px; padding: 12px; background: var(--cream); border-radius: 12px; text-align: center;">
+                        <div style="font-size: 24px;">😰</div>
+                        <div style="font-size: 20px; font-weight: 700; color: var(--coffee-medium);">8</div>
+                        <div style="font-size: 11px; color: var(--text-light);">Started Anxious</div>
+                    </div>
+                    <div style="flex: 1; min-width: 140px; padding: 12px; background: var(--cream); border-radius: 12px; text-align: center;">
+                        <div style="font-size: 24px;">😌</div>
+                        <div style="font-size: 20px; font-weight: 700; color: var(--coffee-medium);">10</div>
+                        <div style="font-size: 11px; color: var(--text-light);">Ended Calm</div>
+                    </div>
+                    <div style="flex: 1; min-width: 140px; padding: 12px; background: linear-gradient(135deg, #d4edda, #c3e6cb); border-radius: 12px; text-align: center;">
+                        <div style="font-size: 24px;">✨</div>
+                        <div style="font-size: 20px; font-weight: 700; color: #155724;">85%</div>
+                        <div style="font-size: 11px; color: #155724;">Felt Better After</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 15: REWARDS - GAMIFICATION LABORATORY -->
+        <div id="rewards" class="page gamified-only">
+            <div class="drip-line"><div class="line"></div></div>
+            
+            <!-- Research Header - Dark, Experimental -->
+            <div style="background: linear-gradient(135deg, #0a0a0a, #1a1a2e); border: 1px solid #333; border-radius: 20px; padding: 32px; margin-bottom: 24px; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: 10px; right: 10px; font-size: 10px; color: #666; font-family: monospace;">EXPERIMENT_MODULE_03</div>
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <div style="width: 12px; height: 12px; background: #e74c3c; border-radius: 50%; animation: pulse 2s infinite;"></div>
+                    <span style="font-size: 11px; color: #e74c3c; font-weight: 600; letter-spacing: 2px;">GAMIFICATION ACTIVE</span>
+                </div>
+                <h2 style="font-size: 28px; color: #fff; font-weight: 300; margin-bottom: 8px;">The Reward System</h2>
+                <p style="color: #888; font-size: 14px; line-height: 1.6;">
+                    This page contains engagement mechanics designed to influence your behavior.<br>
+                    <strong style="color: #fff;">Observe your reactions.</strong>
+                </p>
+            </div>
+            
+            <!-- Critical Question Banner -->
+            <div style="background: #1a1a1a; border-left: 4px solid #f39c12; padding: 20px; margin-bottom: 24px; border-radius: 0 12px 12px 0;">
+                <div style="font-size: 12px; color: #f39c12; margin-bottom: 8px; font-weight: 600;">⚠️ BEFORE YOU SCROLL</div>
+                <div style="font-size: 16px; color: #fff; font-style: italic;">
+                    "Are you here because you want to breathe, or because you want the reward?"
+                </div>
+            </div>
+            
+            <!-- Progress Section - Deconstructed -->
+            <div style="background: #fff; border-radius: 20px; padding: 24px; margin-bottom: 24px; position: relative;">
+                <div style="position: absolute; top: -12px; left: 20px; background: #e74c3c; color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600;">
+                    🔬 VARIABLE RATIO REINFORCEMENT
+                </div>
+                
+                <div style="margin-top: 12px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <div>
+                            <div style="font-size: 13px; color: #888;">Your Progress</div>
+                            <div style="font-size: 32px; font-weight: 700; color: var(--coffee-dark);"><span id="rewardStampCount2">4</span>/10</div>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 13px; color: #888;">Next Reward</div>
+                            <div style="font-size: 18px; font-weight: 600; color: #f39c12;">6 more</div>
+                        </div>
+                    </div>
+                    
+                    <div style="height: 8px; background: #eee; border-radius: 4px; overflow: hidden; margin-bottom: 16px;">
+                        <div style="height: 100%; width: 40%; background: linear-gradient(90deg, #f39c12, #e74c3c); border-radius: 4px;"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between;">
+                        <span style="font-size: 20px;">☕☕☕☕</span>
+                        <span style="font-size: 20px; opacity: 0.3;">☕☕☕☕☕☕</span>
+                    </div>
+                </div>
+                
+                <!-- Deconstruction Note -->
+                <div style="margin-top: 20px; padding-top: 16px; border-top: 1px dashed #ddd;">
+                    <div style="font-size: 11px; color: #888; line-height: 1.6;">
+                        <strong>🔍 What's happening here:</strong> Progress bars create anticipation. The "almost there" feeling triggers dopamine release, encouraging continued engagement regardless of actual benefit.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Rewards Section - With Annotations -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                    <span style="font-size: 18px;">🎁</span>
+                    <span style="font-weight: 600;">Available Rewards</span>
+                    <span style="font-size: 11px; color: #888; margin-left: auto;">Tap to examine</span>
+                </div>
+                
+                <!-- Reward Card 1 -->
+                <div style="background: linear-gradient(135deg, #2d1b13, #1a0f0a); border-radius: 16px; padding: 20px; margin-bottom: 12px; color: #fff; position: relative;">
+                    <div style="position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.1); padding: 4px 8px; border-radius: 8px; font-size: 10px;">UNLOCKED</div>
+                    <div style="font-size: 24px; margin-bottom: 8px;">☕</div>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 4px;">Free Coffee Voucher</div>
+                    <div style="font-size: 13px; opacity: 0.7; margin-bottom: 16px;">Redeem at partner cafés</div>
+                    <div style="display: flex; gap: 8px;">
+                        <button style="flex: 1; padding: 12px; background: #f39c12; border: none; border-radius: 8px; font-weight: 600; cursor: pointer;">Claim Reward</button>
+                        <button style="padding: 12px 16px; background: rgba(255,255,255,0.1); border: none; border-radius: 8px; color: #fff; cursor: pointer;">?</button>
+                    </div>
+                </div>
+                
+                <!-- Reward Card 2 - Locked -->
+                <div style="background: #f5f5f5; border-radius: 16px; padding: 20px; margin-bottom: 12px; position: relative; opacity: 0.7;">
+                    <div style="position: absolute; top: 12px; right: 12px; background: #ddd; padding: 4px 8px; border-radius: 8px; font-size: 10px; color: #666;">🔒 16 MORE</div>
+                    <div style="font-size: 24px; margin-bottom: 8px; filter: grayscale(1);">🎨</div>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 4px; color: #888;">Custom Themes</div>
+                    <div style="font-size: 13px; color: #aaa;">Personalize your experience</div>
+                </div>
+                
+                <!-- Reward Card 3 - Locked -->
+                <div style="background: #f5f5f5; border-radius: 16px; padding: 20px; position: relative; opacity: 0.7;">
+                    <div style="position: absolute; top: 12px; right: 12px; background: #ddd; padding: 4px 8px; border-radius: 8px; font-size: 10px; color: #666;">🔒 26 MORE</div>
+                    <div style="font-size: 24px; margin-bottom: 8px; filter: grayscale(1);">🏆</div>
+                    <div style="font-size: 18px; font-weight: 600; margin-bottom: 4px; color: #888;">Premium Status</div>
+                    <div style="font-size: 13px; color: #aaa;">Exclusive breathing patterns</div>
+                </div>
+            </div>
+            
+            <!-- Streak Section - Critical Analysis -->
+            <div style="background: linear-gradient(135deg, #fff5f5, #ffe5e5); border: 2px solid #ffcccc; border-radius: 16px; padding: 20px; margin-bottom: 24px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <div style="font-size: 36px;">🔥</div>
+                    <div>
+                        <div style="font-size: 24px; font-weight: 700; color: #e74c3c;">7 Day Streak</div>
+                        <div style="font-size: 13px; color: #888;">Don't break it!</div>
+                    </div>
+                </div>
+                
+                <div style="display: flex; gap: 8px; margin-bottom: 16px;">
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Mon</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Tue</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Wed</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Thu</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Fri</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff; border-radius: 8px; border: 2px solid #4CAF50;">
+                        <div style="font-size: 10px; color: #888;">Sat</div>
+                        <div style="font-size: 16px;">✓</div>
+                    </div>
+                    <div style="flex: 1; text-align: center; padding: 8px; background: #fff5e6; border-radius: 8px; border: 2px dashed #f39c12;">
+                        <div style="font-size: 10px; color: #888;">Sun</div>
+                        <div style="font-size: 16px;">?</div>
+                    </div>
+                </div>
+                
+                <!-- Critical Analysis -->
+                <div style="background: rgba(0,0,0,0.05); padding: 12px; border-radius: 8px;">
+                    <div style="font-size: 11px; color: #666; line-height: 1.6;">
+                        <strong>🔍 Loss Aversion in Action:</strong> The fear of "breaking" your streak creates anxiety. You may breathe not for wellness, but to avoid losing progress. Is this healthy motivation?
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Self-Check Section -->
+            <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 20px; padding: 24px; margin-bottom: 24px; color: #fff;">
+                <div style="font-size: 14px; color: #74b9ff; margin-bottom: 16px; font-weight: 600;">🪞 HONEST SELF-CHECK</div>
+                
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 14px; margin-bottom: 12px;">Right now, I feel...</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer; transition: all 0.2s;">Motivated 💪</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer; transition: all 0.2s;">Pressured 😰</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer; transition: all 0.2s;">Excited 🎉</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer; transition: all 0.2s;">Anxious 😟</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer; transition: all 0.2s;">Indifferent 😐</button>
+                    </div>
+                </div>
+                
+                <div style="margin-bottom: 20px;">
+                    <div style="font-size: 14px; margin-bottom: 12px;">Why did I open this page?</div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer;">Check my progress</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer;">Claim a reward</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer;">Just curious</button>
+                        <button onclick="this.classList.toggle('selected')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; color: #fff; font-size: 13px; cursor: pointer;">Feel obligated</button>
+                    </div>
+                </div>
+                
+                <div style="padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 12px; color: #888; text-align: center;">
+                        Your responses help us understand how gamification affects user behavior.
+                    </div>
+                </div>
+            </div>
+            
+            <!-- The Alternative -->
+            <div style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9); border-radius: 20px; padding: 24px; text-align: center;">
+                <div style="font-size: 32px; margin-bottom: 12px;">🧘</div>
+                <div style="font-size: 18px; font-weight: 600; color: #2e7d32; margin-bottom: 8px;">Want to try without rewards?</div>
+                <div style="font-size: 14px; color: #558b2f; margin-bottom: 16px; line-height: 1.6;">
+                    Pure Mode removes all gamification.<br>
+                    Just you, your breath, and the present moment.
+                </div>
+                <button onclick="goTo('settings')" style="padding: 14px 32px; background: #2e7d32; color: #fff; border: none; border-radius: 30px; font-weight: 600; font-size: 14px; cursor: pointer;">
+                    Switch to Pure Mode →
+                </button>
+            </div>
+            
+            <!-- Research Footer -->
+            <div style="margin-top: 32px; padding: 20px; border: 1px solid #ddd; border-radius: 12px; background: #fafafa;">
+                <div style="font-size: 11px; color: #888; line-height: 1.8; text-align: center;">
+                    <strong>📚 Design Research Context</strong><br><br>
+                    This rewards system replicates engagement patterns found in apps like Duolingo, Headspace, and social media platforms. 
+                    By making these mechanics visible and asking you to reflect on them, Breath Café investigates:<br><br>
+                    <em>"Does the interface control me, or can I define the speed of my own experience?"</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 10: SETTINGS -->
+        <div id="settings" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <h2 class="section-title" style="margin-bottom: 32px;">⚙️ Settings</h2>
+            
+            <!-- EXPERIENCE MODE - Design Research Feature -->
+            <div class="stats-card" style="margin-bottom: 20px; border: 2px solid var(--coffee-medium);">
+                <div style="padding: 20px; background: linear-gradient(135deg, rgba(93, 64, 55, 0.05), rgba(141, 110, 99, 0.08)); border-radius: 12px;">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <span style="font-size: 24px;">🔬</span>
+                        <div>
+                            <div style="font-weight: 700; font-size: 16px;">Experience Mode</div>
+                            <div style="font-size: 12px; color: var(--text-light);">A design research experiment</div>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size: 13px; color: var(--text-light); line-height: 1.6; margin-bottom: 20px; padding: 12px; background: white; border-radius: 8px;">
+                        "Does the interface control me, or can I define the speed of my own experience?"<br>
+                        <span style="font-size: 11px;">— Compare how different modes affect your experience</span>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <label class="mode-option" id="pureModeOption" onclick="setExperienceMode('pure')">
+                            <div class="mode-radio"></div>
+                            <div class="mode-content">
+                                <div class="mode-title">🧘 Pure Mode</div>
+                                <div class="mode-desc">No streaks, no stamps, no achievements.<br>Just breathing. Just you.</div>
+                            </div>
+                        </label>
+                        
+                        <label class="mode-option active" id="gamifiedModeOption" onclick="setExperienceMode('gamified')">
+                            <div class="mode-radio"></div>
+                            <div class="mode-content">
+                                <div class="mode-title">🎮 Gamified Mode</div>
+                                <div class="mode-desc">Streaks, stamps, achievements enabled.<br>Does this motivate you — or control you?</div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <div style="margin-top: 16px; padding: 12px; background: var(--cream); border-radius: 8px; font-size: 12px; color: var(--text-light);">
+                        💡 <strong>Observe:</strong> Switch between modes and notice how your motivation and experience change.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Dark Mode</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Switch to dark theme</div>
+                    </div>
+                    <div class="toggle-switch" id="toggleDarkMode" onclick="toggleSetting('darkMode')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Sound Effects</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Play sounds during brewing</div>
+                    </div>
+                    <div class="toggle-switch active" id="toggleSound" onclick="toggleSetting('sound')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Vibration</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Haptic feedback</div>
+                    </div>
+                    <div class="toggle-switch active" id="toggleVibration" onclick="toggleSetting('vibration')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div>
+                        <div style="font-weight: 600;">Language</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Select your language</div>
+                    </div>
+                    <div style="font-weight: 500; color: var(--coffee-medium); cursor: pointer;" onclick="openLanguageModal()">English →</div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="openModal('privacyModal')">
+                    <div>
+                        <div style="font-weight: 600;">Privacy Policy</div>
+                    </div>
+                    <div style="color: var(--text-light);">→</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="openModal('termsModal')">
+                    <div>
+                        <div style="font-weight: 600;">Terms of Service</div>
+                    </div>
+                    <div style="color: var(--text-light);">→</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div>
+                        <div style="font-weight: 600;">App Version</div>
+                    </div>
+                    <div style="color: var(--text-light);">1.0.0</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 11: NOTIFICATIONS -->
+        <div id="notifications" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <h2 class="section-title" style="margin-bottom: 32px;">🔔 Notifications</h2>
+            
+            <div class="stats-card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Daily Reminder</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Get reminded to brew</div>
+                    </div>
+                    <div class="toggle-switch active" id="toggleDailyReminder" onclick="toggleSetting('dailyReminder')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Reminder Time</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Set your preferred time</div>
+                    </div>
+                    <div style="font-weight: 500; color: var(--coffee-medium); cursor: pointer;" onclick="openTimePickerModal()"><span id="reminderTimeDisplay">9:00 AM</span> →</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border);">
+                    <div>
+                        <div style="font-weight: 600;">Streak Alerts</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Don't break your streak!</div>
+                    </div>
+                    <div class="toggle-switch active" id="toggleStreakAlerts" onclick="toggleSetting('streakAlerts')"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0;">
+                    <div>
+                        <div style="font-weight: 600;">Weekly Summary</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Get weekly progress report</div>
+                    </div>
+                    <div class="toggle-switch" id="toggleWeeklySummary" onclick="toggleSetting('weeklySummary')"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 12: HELP -->
+        <div id="help" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <h2 class="section-title" style="margin-bottom: 32px;">❓ Help & Support</h2>
+            
+            <div class="stats-card" style="margin-bottom: 20px;">
+                <div style="padding: 20px; text-align: center; border-bottom: 1px solid var(--border);">
+                    <div style="font-size: 48px; margin-bottom: 12px;">☕</div>
+                    <div style="font-weight: 600; font-size: 18px; margin-bottom: 8px;">How to use Breath Café</div>
+                    <div style="font-size: 14px; color: var(--text-light);">Learn the basics of mindful breathing</div>
+                </div>
+                
+                <!-- Getting Started -->
+                <div class="help-accordion">
+                    <div class="help-accordion-header" onclick="toggleAccordion(this)">
+                        <div style="font-weight: 600;">📖 Getting Started Guide</div>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="help-accordion-content">
+                        <p><strong>Welcome to Breath Café!</strong></p>
+                        <p>1. <strong>Select your mood</strong> - Tell us how you're feeling right now</p>
+                        <p>2. <strong>Get your brew</strong> - We'll recommend a breathing pattern matched to your emotion</p>
+                        <p>3. <strong>Start brewing</strong> - Hold the button and follow the breathing guide</p>
+                        <p>4. <strong>Reflect</strong> - Rate your experience and track your progress</p>
+                        <p>5. <strong>Collect stamps</strong> - Build your collection with every completed session!</p>
+                    </div>
+                </div>
+                
+                <!-- Breathing Techniques -->
+                <div class="help-accordion">
+                    <div class="help-accordion-header" onclick="toggleAccordion(this)">
+                        <div style="font-weight: 600;">🫁 Breathing Techniques</div>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="help-accordion-content">
+                        <p><strong>Each coffee has a unique breathing pattern:</strong></p>
+                        <p>🫖 <strong>Mocha (5-4-7)</strong> - Warm & comforting, great for sadness</p>
+                        <p>☕ <strong>Americano (4-2-4)</strong> - Clear & balanced, perfect for anxiety</p>
+                        <p>🥛 <strong>Latte (5-3-6)</strong> - Smooth & gentle, ideal for relaxation</p>
+                        <p>🧊 <strong>Cold Brew (6-3-6)</strong> - Cool & patient, helps with anger</p>
+                        <p>🍯 <strong>Caramel (4-3-5)</strong> - Sweet & rich, enhances joy</p>
+                    </div>
+                </div>
+                
+                <!-- Stamps & Rewards -->
+                <div class="help-accordion">
+                    <div class="help-accordion-header" onclick="toggleAccordion(this)">
+                        <div style="font-weight: 600;">🏆 Stamps & Rewards</div>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="help-accordion-content">
+                        <p><strong>Build your collection!</strong></p>
+                        <p>• Complete a brewing session to earn a stamp</p>
+                        <p>• Collect 10 stamps to unlock achievements</p>
+                        <p>• Maintain your streak for bonus rewards</p>
+                        <p>• Track your mood improvements over time</p>
+                        <p>• Unlock new levels as you progress!</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Support -->
+                <div class="help-accordion">
+                    <div class="help-accordion-header" onclick="toggleAccordion(this)">
+                        <div style="font-weight: 600;">💬 Contact Support</div>
+                        <span class="accordion-arrow">▼</span>
+                    </div>
+                    <div class="help-accordion-content">
+                        <p><strong>We're here to help!</strong></p>
+                        <p>📧 Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="32414742425d40467250405753465a515354571c534242">[email&#160;protected]</a></p>
+                        <p>🐦 Twitter: @BreathCafeApp</p>
+                        <p>💬 Response time: Within 24 hours</p>
+                        <p style="margin-top: 12px;">
+                            <button class="btn btn-primary" style="width: 100%;" onclick="window.open('mailto:support@breathcafe.app')">📧 Send Email</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-card">
+                <div style="padding: 20px; text-align: center;">
+                    <div style="font-weight: 600; margin-bottom: 8px;">Need more help?</div>
+                    <div style="font-size: 14px; color: var(--text-light); margin-bottom: 16px;">We're here to support you</div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="window.open('mailto:support@breathcafe.app')">📧 Email Support</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE 13: ACCOUNT -->
+        <div id="account" class="page">
+            <div class="drip-line"><div class="line"></div></div>
+            <h2 class="section-title" style="margin-bottom: 32px;">👤 My Account</h2>
+            
+            <div class="stats-card" style="margin-bottom: 20px; text-align: center; padding: 32px 20px;">
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, var(--coffee-medium), var(--coffee-dark)); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 48px; color: white;">👤</div>
+                <div style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; margin-bottom: 4px;" id="accountUserName">Coffee Lover</div>
+                <div style="color: var(--text-light); margin-bottom: 16px;" id="accountUserEmail"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="780d0b1d0a381a0a1d190c101b191e1d56190808">[email&#160;protected]</a></div>
+                <div style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #fff5e6, #ffe4cc); padding: 8px 20px; border-radius: 20px;">
+                    <span>🏆</span>
+                    <span style="font-weight: 600;" id="accountUserLevel">Level 7 · Gold Member</span>
+                </div>
+            </div>
+
+            <div class="stats-card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="openModal('editProfileModal')">
+                    <div style="font-weight: 600;">Edit Profile</div>
+                    <div style="color: var(--text-light);">→</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--border); cursor: pointer;" onclick="openModal('changePasswordModal')">
+                    <div style="font-weight: 600;">Change Password</div>
+                    <div style="color: var(--text-light);">→</div>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 0; cursor: pointer;" onclick="openModal('connectedAccountsModal')">
+                    <div style="font-weight: 600;">Connected Accounts</div>
+                    <div style="color: var(--text-light);">→</div>
+                </div>
+            </div>
+
+            <div class="stats-card" style="margin-bottom: 20px;">
+                <div style="display: flex; justify-content: space-around; padding: 20px 0; text-align: center;">
+                    <div>
+                        <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--coffee-medium);" id="accountTotalBrews">24</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Total Brews</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--coffee-medium);" id="accountStreak">7</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Day Streak</div>
+                    </div>
+                    <div>
+                        <div style="font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--coffee-medium);" id="accountStamps">4</div>
+                        <div style="font-size: 13px; color: var(--text-light);">Stamps</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="btn" style="width: 100%; color: #e74c3c; border: 2px solid #e74c3c; background: transparent;" onclick="confirmLogout()">Log Out</button>
+        </div>
+
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav">
+            <div class="bottom-nav-inner">
+                <div class="nav-item active" onclick="goTo('welcome')">
+                    <div class="nav-icon">🏠</div>
+                    <div class="nav-label">Home</div>
+                </div>
+                <div class="nav-item" onclick="goTo('emotion')">
+                    <div class="nav-icon">☕</div>
+                    <div class="nav-label">Brew</div>
+                </div>
+                <div class="nav-item gamified-only" onclick="goTo('stamps')">
+                    <div class="nav-icon">🏆</div>
+                    <div class="nav-label">Stamps</div>
+                </div>
+                <div class="nav-item" onclick="goTo('journal')">
+                    <div class="nav-icon">📖</div>
+                    <div class="nav-label">Journal</div>
+                </div>
+                <div class="nav-item" onclick="goTo('stats')">
+                    <div class="nav-icon">🔬</div>
+                    <div class="nav-label">Observe</div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ========== MODALS ========== -->
+    
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="privacyModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="modal-close" onclick="closeModal('privacyModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Last updated: December 2024</strong></p>
+                <p>At Breath Café, we take your privacy seriously. This policy explains how we collect, use, and protect your personal information.</p>
+                <h4>Information We Collect</h4>
+                <p>• Usage data (brewing sessions, emotions tracked)</p>
+                <p>• Device information for app optimization</p>
+                <p>• Optional account information if you sign up</p>
+                <h4>How We Use Your Data</h4>
+                <p>• To provide personalized breathing recommendations</p>
+                <p>• To track your progress and streaks</p>
+                <p>• To improve our services</p>
+                <h4>Data Storage</h4>
+                <p>Your data is stored locally on your device. We do not sell or share your personal information with third parties.</p>
+                <h4>Contact Us</h4>
+                <p>Questions? Email us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ea9a98839c8b8993aa88988f8b9e82898b8c8fc48b9a9a">[email&#160;protected]</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div class="modal-overlay" id="termsModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms of Service</h3>
+                <button class="modal-close" onclick="closeModal('termsModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Effective: December 2024</strong></p>
+                <p>By using Breath Café, you agree to these terms.</p>
+                <h4>Use of Service</h4>
+                <p>Breath Café is designed to help you practice mindful breathing. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+                <h4>User Conduct</h4>
+                <p>You agree to use the app responsibly and not attempt to reverse engineer or misuse the service.</p>
+                <h4>Intellectual Property</h4>
+                <p>All content, design, and branding are property of Breath Café.</p>
+                <h4>Limitation of Liability</h4>
+                <p>Breath Café is provided "as is" without warranties. We are not liable for any damages arising from use of the app.</p>
+                <h4>Changes to Terms</h4>
+                <p>We may update these terms. Continued use constitutes acceptance of changes.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div class="modal-overlay" id="editProfileModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Edit Profile</h3>
+                <button class="modal-close" onclick="closeModal('editProfileModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Display Name</label>
+                    <input type="text" id="editName" class="form-input" placeholder="Enter your name" value="Guest">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="editEmail" class="form-input" placeholder="Enter your email" value="">
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 16px;" onclick="saveProfile()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div class="modal-overlay" id="changePasswordModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Change Password</h3>
+                <button class="modal-close" onclick="closeModal('changePasswordModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Current Password</label>
+                    <input type="password" id="currentPassword" class="form-input" placeholder="Enter current password">
+                </div>
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input type="password" id="newPassword" class="form-input" placeholder="Enter new password">
+                </div>
+                <div class="form-group">
+                    <label>Confirm New Password</label>
+                    <input type="password" id="confirmPassword" class="form-input" placeholder="Confirm new password">
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 16px;" onclick="changePassword()">Update Password</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Connected Accounts Modal -->
+    <div class="modal-overlay" id="connectedAccountsModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Connected Accounts</h3>
+                <button class="modal-close" onclick="closeModal('connectedAccountsModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="connected-account">
+                    <div class="account-info">
+                        <span style="font-size: 24px;">🍎</span>
+                        <div>
+                            <div style="font-weight: 600;">Apple</div>
+                            <div style="font-size: 12px; color: var(--text-light);">Not connected</div>
+                        </div>
+                    </div>
+                    <button class="btn-connect" onclick="connectAccount('apple')">Connect</button>
+                </div>
+                <div class="connected-account">
+                    <div class="account-info">
+                        <span style="font-size: 24px;">🔵</span>
+                        <div>
+                            <div style="font-weight: 600;">Google</div>
+                            <div style="font-size: 12px; color: var(--text-light);">Not connected</div>
+                        </div>
+                    </div>
+                    <button class="btn-connect" onclick="connectAccount('google')">Connect</button>
+                </div>
+                <div class="connected-account">
+                    <div class="account-info">
+                        <span style="font-size: 24px;">📘</span>
+                        <div>
+                            <div style="font-weight: 600;">Facebook</div>
+                            <div style="font-size: 12px; color: var(--text-light);">Not connected</div>
+                        </div>
+                    </div>
+                    <button class="btn-connect" onclick="connectAccount('facebook')">Connect</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Modal -->
+    <div class="modal-overlay" id="languageModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Select Language</h3>
+                <button class="modal-close" onclick="closeModal('languageModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="language-option selected" onclick="selectLanguage('en', this)">
+                    <span>🇺🇸</span> English
+                    <span class="check-mark">✓</span>
+                </div>
+                <div class="language-option" onclick="selectLanguage('es', this)">
+                    <span>🇪🇸</span> Español
+                    <span class="check-mark">✓</span>
+                </div>
+                <div class="language-option" onclick="selectLanguage('fr', this)">
+                    <span>🇫🇷</span> Français
+                    <span class="check-mark">✓</span>
+                </div>
+                <div class="language-option" onclick="selectLanguage('de', this)">
+                    <span>🇩🇪</span> Deutsch
+                    <span class="check-mark">✓</span>
+                </div>
+                <div class="language-option" onclick="selectLanguage('ja', this)">
+                    <span>🇯🇵</span> 日本語
+                    <span class="check-mark">✓</span>
+                </div>
+                <div class="language-option" onclick="selectLanguage('ko', this)">
+                    <span>🇰🇷</span> 한국어
+                    <span class="check-mark">✓</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Time Picker Modal -->
+    <div class="modal-overlay" id="timePickerModal" onclick="closeModalOnOverlay(event)">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Set Reminder Time</h3>
+                <button class="modal-close" onclick="closeModal('timePickerModal')">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="time-picker">
+                    <select id="reminderHour" class="time-select">
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9" selected>9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <span style="font-size: 24px; font-weight: 600;">:</span>
+                    <select id="reminderMinute" class="time-select">
+                        <option value="00" selected>00</option>
+                        <option value="15">15</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                    </select>
+                    <select id="reminderPeriod" class="time-select">
+                        <option value="AM" selected>AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                </div>
+                <button class="btn btn-primary" style="width: 100%; margin-top: 24px;" onclick="saveReminderTime()">Save Time</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message" id="toastMessage">Settings saved!</span>
+    </div>
+
+
+    <script src="js/app.js"></script>
+</body>
+</html>
